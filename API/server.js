@@ -59,8 +59,8 @@ var bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 
-const  {initializeApp } = require("firebase/app");
-const  {getFirestore, collection, addDoc } = require("firebase/firestore");
+const { initializeApp } = require("firebase/app");
+const { getFirestore, collection, addDoc, getDocs } = require("firebase/firestore");
 
 
 
@@ -79,29 +79,96 @@ const db = getFirestore(server);
 
 const PORT = 5050
 
-app.post('/Teams', async (req, res) => {
+app.post('/teams', async (req, res) => {
 
-        const data = req.body.data
-        // Data -> "Name" : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
+    const data = req.body.data
+    // Data -> "Name" : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
 
-        
-        try {
 
-            data.forEach(member => {
+    try {
 
-                const docRef = addDoc(collection(db, `teams/`), member);
+        data.forEach(member => {
 
-            });
+            const docRef = addDoc(collection(db, `teams/`), member);
 
-                res.status(200).json("Data Added")
+        });
 
-        } catch (e) {
+        res.status(200).json("Data Added")
 
-            console.error("Error adding document: ", e);
-            
+    } catch (e) {
+
+        console.error("Error adding document: ", e);
+
+    }
+
+})
+
+
+app.get('/teams', async (req, res) => {
+
+    let memberInfo = []
+
+    try {
+
+        const querySnapshot = await getDocs(collection(db, "teams/"));
+        querySnapshot.forEach((doc) => {
+            memberInfo.push(doc.data())
         }
+        );
+        res.json(memberInfo)
 
-    })
+
+    } catch (e) {
+        res.json(e)
+
+    }
+
+})
+
+app.post('/setEvents', async (req, res) => {
+
+    const data = req.body.data
+    // { data : { name  , date  ,eventDetails{  date , mode , games , speaker , etc} , desc , summary , thumbnail , images[] , videos[] } }
+
+    try {
+
+        data.forEach(event => {
+
+            const docRef = addDoc(collection(db, `events/`), event);
+
+        });
+
+        res.status(200).json("Event Added")
+
+    } catch (e) {
+
+        console.error("Error adding document: ", e);
+
+    }
+
+})
+
+app.get('/getEvents', async (req, res) => {
+
+    let EventInfo = []
+
+    try {
+
+        const querySnapshot = await getDocs(collection(db, "events/"));
+        querySnapshot.forEach((doc) => {
+            EventInfo.push(doc.data())
+        }
+        );
+        res.json(EventInfo)
+
+
+    } catch (e) {
+        res.json(e)
+
+    }
+
+})
+
 
 
 app.listen(PORT, function () {
