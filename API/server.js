@@ -1,61 +1,19 @@
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
-// import { Router } from "express";
-
-// const {express} = Router
-
-
-
-
-// const firebaseConfig = {
-//     apiKey: "AIzaSyCfzG7Hl5YeCYkH45M6bLYaFcpjwPh-vuk",
-//     authDomain: "nscc-bitw.firebaseapp.com",
-//     projectId: "nscc-bitw",
-//     storageBucket: "nscc-bitw.appspot.com",
-//     messagingSenderId: "357924802216",
-//     appId: "1:357924802216:web:a6ab5f26a7727a968d7c9d",
-//     measurementId: "G-K6089VEEY0"
-// };
-
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-// const db = getFirestore(app);
-
-// server.listen(5000, () =>
-// {
-
-// router.post('/Teams', async (req, res) => {
-//         const data = req.body.data
-//         // Data -> "Name" : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
-
-//         try {
-//             const docRef = addDoc(collection(db, "teams"), data);
-//             res.json("Data Added")
-//         } catch (e) {
-//             console.error("Error adding document: ", e);
-//         }
-
-//     })
-
-//     //To read Data
-
-// router.get('/Teams', async (req, res) => {
-
-//         const querySnapshot = await getDocs(collection(db, "teams"));
-//         querySnapshot.forEach((doc) => {
-//           console.log(`${doc.id} => ${doc.data()}`);
-//         });
-
-//     })
-
-// }
-// )
-
 
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+const multer = require('multer')
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '../frontend/public/assets/')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+    }
+})
+
+const upload = multer({ storage: storage })
 
 app.use(bodyParser.json());
 
@@ -79,18 +37,20 @@ const db = getFirestore(server);
 
 const PORT = 5050
 
-app.post('/teams', async (req, res) => {
+app.post('/teams', upload.single('image'),  async (req, res) => {
 
-    const data = req.body.data
-    // Data -> "Name" : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
+    let data = req.body.data
+    const ImageInformatiom = req.file
+
+    data = JSON.parse(data)
+    // Data -> "Name"   : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
 
 
     try {
 
         data.forEach(member => {
-
-            const docRef = addDoc(collection(db, `teams/`), member);
-
+            member.image = ImageInformatiom.path
+            const docRef = addDoc(collection(db, `teams/`), {member});
         });
 
         res.status(200).json("Data Added")
@@ -125,15 +85,23 @@ app.get('/teams', async (req, res) => {
 
 })
 
-app.post('/setEvents', async (req, res) => {
+app.post('/setEvents', upload.array('images' , 10),  async (req, res) => {
 
-    const data = req.body.data
+    var data = req.body.data
+    data = JSON.parse(data)
+    const files = req.files
+    var paths = []
+
+
+    files.forEach((ele)=>{
+        paths.push(ele.path)
+    })
     // { data : { name  , date  ,eventDetails{  date , mode , games , speaker , etc} , desc , summary , thumbnail , images[] , videos[] } }
 
     try {
 
         data.forEach(event => {
-
+            event.iamges = paths
             const docRef = addDoc(collection(db, `events/`), event);
 
         });
@@ -154,18 +122,19 @@ app.get('/getEvents', async (req, res) => {
     let upcomingEvents = []
     let recentEvents = []
 
-    let today = new Date()
+    const today = new Date()
 
     try {
         const querySnapshot = await getDocs(collection(db, "events/"));
         querySnapshot.forEach((doc) => {
+
             EventInfo.push(doc.data())
 
             const eventDate = doc.data().date
 
-            today = today.getDate() + "-" +  (today.getMonth() + 1) + "-" + today.getFullYear()
+            let date = today.getDate() + "-" +  (today.getMonth() + 1) + "-" + today.getFullYear()
 
-            today > eventDate ? recentEvents.push(doc.data()) : upcomingEvents.push(doc.data())
+            date > eventDate ? recentEvents.push(doc.data()) : upcomingEvents.push(doc.data())
 
         }
         );
@@ -173,13 +142,12 @@ app.get('/getEvents', async (req, res) => {
 
 
     } catch (e) {
+        console.log(e)
         res.json(e)
 
     }
 
 })
-
-
 
 app.listen(PORT, function () {
     console.log(`Demo project at: ${PORT}!`);
