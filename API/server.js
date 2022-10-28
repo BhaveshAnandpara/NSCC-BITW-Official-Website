@@ -151,15 +151,25 @@ app.post('/setEvents', async (req, res) => {
 app.get('/getEvents', async (req, res) => {
 
     let EventInfo = []
+    let upcomingEvents = []
+    let recentEvents = []
+
+    let today = new Date()
 
     try {
-
         const querySnapshot = await getDocs(collection(db, "events/"));
         querySnapshot.forEach((doc) => {
             EventInfo.push(doc.data())
+
+            const eventDate = doc.data().date
+
+            today = today.getDate() + "-" +  (today.getMonth() + 1) + "-" + today.getFullYear()
+
+            today > eventDate ? recentEvents.push(doc.data()) : upcomingEvents.push(doc.data())
+
         }
         );
-        res.json(EventInfo)
+        res.json({"EventInfo" : EventInfo , "upcomingEvents" : upcomingEvents , "recentEvents" : recentEvents })
 
 
     } catch (e) {
