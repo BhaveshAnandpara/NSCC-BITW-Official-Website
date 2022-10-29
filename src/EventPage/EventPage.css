@@ -1,13 +1,13 @@
 body {
-    background: linear-gradient(
-      92.12deg,
-      #7e9acf 0.64%,
-      #78c7ce 59.86%,
-      rgba(105, 205, 213, 0.58) 109.96%
-    );
-    font-family: "Poppins";
-    font-style: normal;
-  }
+  background: linear-gradient(
+    92.12deg,
+    #7e9acf 0.64%,
+    #78c7ce 59.86%,
+    rgba(105, 205, 213, 0.58) 109.96%
+  );
+  font-family: "Poppins";
+  font-style: normal;
+}
 
 .box1 {
   background: linear-gradient(
@@ -18,35 +18,33 @@ body {
   box-shadow: 14px 0px 48px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(2.5px);
   border-radius: 6px;
-  
 }
 
-.box2
-{
+.box2 {
+  background: linear-gradient(
+    186.43deg,
+    rgba(255, 255, 255, 0.08) 1.03%,
+    rgba(255, 255, 255, 0.1) 99.57%
+  );
+  box-shadow: 14px 0px 48px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(2.5px);
 
-background: linear-gradient(186.43deg, rgba(255, 255, 255, 0.08) 1.03%, rgba(255, 255, 255, 0.1) 99.57%);
-box-shadow: 14px 0px 48px rgba(0, 0, 0, 0.15);
-backdrop-filter: blur(2.5px);
+  border-radius: 11px;
 
-border-radius: 11px;
-
-flex: none;
-order: 1;
-flex-grow: 0;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
 
 h1 {
-   
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 54px;
-    text-align: center;
-    color: #ffffff;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+  text-align: center;
+  color: #ffffff;
+}
 
-  }
-  
 div h2 {
- 
   left: 22px;
   top: 20px;
 
@@ -59,7 +57,6 @@ div h2 {
 }
 
 div h3 {
-  
   left: 22px;
   top: 114px;
   font-weight: 500;
@@ -70,19 +67,15 @@ div h3 {
 }
 
 div hr {
-
   color: #ffffff;
   mix-blend-mode: overlay;
   opacity: 0.3;
-
 }
-a
-{
-    text-decoration: none;
-    float: right;
+a {
+  text-decoration: none;
+  float: right;
 }
 button {
-
-    background: transparent;
-    border: none;
+  background: transparent;
+  border: none;
 }

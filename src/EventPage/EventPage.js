@@ -8,7 +8,6 @@ import data from "./Data";
 function EventPage() {
   const [noOfEvent, setNoOfEvent] = useState(3);
   const slice = data.eventData.slice(0, noOfEvent);
-
 //   const [data, setData] = useState([]);
 //   axios
 //   .get(
@@ -17,7 +16,6 @@ function EventPage() {
 //   .then((resp) => {
 //     setData(resp.data.event);
 //   }).catch((err)=>console.log(err));
-
   const loadMore = () =>
   {
     setNoOfEvent(noOfEvent + noOfEvent);
