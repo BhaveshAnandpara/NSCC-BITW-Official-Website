@@ -1,0 +1,95 @@
+body{
+    
+   /*background: linear-gradient(
+      92.12deg,
+      #7e9acf 0.64%,
+      #78c7ce 59.86%,
+      rgba(105, 205, 213, 0.58) 109.96%
+      
+      
+    );*/
+
+    background: url('./images/background.jpg') no-repeat center center /cover;
+    height:100vh;
+    color:white;
+    font-family: "Poppins";
+    font-style: normal;
+    
+
+}
+
+.text-center{
+    margin-top: 20%;
+}
+
+.singleCol{
+    max-width:750px;
+    margin:0 auto;
+}
+
+.social-media-icons-white a {
+    
+    font-size: 2rem;
+    margin-top: 20%;
+}
+
+.test:hover{ 
+      background-color: rgba(150, 202, 245, 0.952);
+        color: #000;
+        box-shadow: 0 0 5px rgba(150, 202, 245, 0.952),
+                    0 0 20px rgba(150, 202, 245, 0.952),
+                    0 0 35px rgba(150, 202, 245, 0.952),
+                    0 0 50px rgba(150, 202, 245, 0.952);
+        border-color:rgba(150, 202, 245, 0.952);
+}
+
+a.Insta{
+  color:  #bc2a8d;
+  
+border-radius: 50%;
+border: 10px solid white;
+padding: 5px;
+background-color: white;
+
+}
+
+
+
+
+
+
+a.linkdin{
+    color:   #0A66C2;
+  
+border-radius: 50%;
+border: 10px solid white;
+padding: 5px;
+background-color: white;
+}
+
+a.github{
+    color:   #171515;
+  
+    border-radius: 50%;
+    border: 10px solid white;
+    padding: 5px;
+    background-color: white;
+}
+
+a.twitter{
+    color:  #00acee;
+  
+    border-radius: 50%;
+    border: 10px solid white;
+    padding: 5px;
+    background-color: white;
+}
+
+a.discord{
+    color:   #7289d9;
+  
+    border-radius: 50%;
+    border: 10px solid white;
+    padding: 5px;
+    background-color: white;
+}
