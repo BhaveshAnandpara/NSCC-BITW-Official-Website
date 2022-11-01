@@ -6,17 +6,26 @@ import Team from './team/Team';
 import AboutUs from './AboutUs/AboutUs';
 import HeroSection from './HeroSection/HeroSection';
 import './App.css'
-import HomePage from './HomePage/HomePage';
 
 
 function App() {
   return (
     <>
+      <div className="page">
         <HeroSection />
+      </div>
+      <div className="page">
         <AboutUs />
+      </div>
+      <div className="page">
         <Team />
+      </div>
+      <div className="page">
         <EventPage />
+      </div>
+      <div className="page">
         <Social />
+      </div>
         <Navbar />
     </>
   );

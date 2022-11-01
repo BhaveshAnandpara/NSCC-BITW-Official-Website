@@ -1,22 +1,36 @@
-.aboutUs-container{
+.aboutUs-container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.about-cards{
+.about-cards {
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px 60px;
-    
+
 }
 
-.about-content{
+.about-content {
     width: 60%;
     font-size: 24px;
     font-weight: 700;
     text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .about-cards {
+        padding: 16px 10px 40px 10px;
+        width: 100%;
+    }
+
+    .about-content {
+        font-size: 18px;
+        width: 90%;
+    }
+
 }
