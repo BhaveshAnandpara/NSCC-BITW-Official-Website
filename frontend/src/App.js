@@ -1,22 +1,23 @@
 import EventPage from './EventPage/EventPage';
 // import Navbar from './Navbar/Navbar';
-import {Route,Routes} from 'react-router-dom';
-import Navbar from './Navbar/Navbar';
-import Home from './Home/Home';
+import { Route, Routes } from 'react-router-dom';
+// import Navbar from './Navbar/Navbar';
+// import Home from './Home/Home';
+import './App.css'
 function App() {
   return (
-   <>
-   <Navbar/>
-<Routes>
-<Route path='/' element={<Home/>} />
-<Route path='/aboutus' element={<EventPage/>} />
+    <>
+      <div className="bg-spin"></div>
+
+        <Routes>
+          <Route path='/' element={<EventPage />} />
+          {/* <Route path='/aboutus' element={<EventPage/>} />
 <Route path='/theteam' element={<EventPage/>} />
   <Route path='/eventpage' element={<EventPage/>} />
-<Route path='/contactus' element={<EventPage/>} />
-</Routes>
+<Route path='/contactus' element={<EventPage/>} /> */}
+        </Routes>
 
-   
-   </>
+    </>
   );
 }
 

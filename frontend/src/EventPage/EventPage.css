@@ -1,33 +1,38 @@
-body {
-  background: linear-gradient(
-    92.12deg,
-    #7e9acf 0.64%,
-    #78c7ce 59.86%,
-    rgba(105, 205, 213, 0.58) 109.96%
-  );
+/* body {
+  background: linear-gradient(92.12deg,
+      #7e9acf 0.64%,
+      #78c7ce 59.86%,
+      rgba(105, 205, 213, 0.58) 109.96%);
   font-family: "Poppins";
   font-style: normal;
+} */
+
+
+
+p{
+  margin: 0;
 }
 
 .box1 {
-  background: linear-gradient(
-    186.43deg,
-    rgba(255, 255, 255, 0.08) 1.03%,
-    rgba(255, 255, 255, 0.1) 99.57%
-  );
-  box-shadow: 14px 0px 48px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(2.5px);
+  width: fit-content;
+  /* Note: backdrop-filter has minimal browser support */
+
   border-radius: 6px;
+  padding: 20px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 172%;
+  /* or 34px */
+
+
+  color: #FFFFFF;
 }
 
 .box2 {
-  background: linear-gradient(
-    186.43deg,
-    rgba(255, 255, 255, 0.08) 1.03%,
-    rgba(255, 255, 255, 0.1) 99.57%
-  );
-  box-shadow: 14px 0px 48px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(2.5px);
+
 
   border-radius: 11px;
 
@@ -71,11 +76,53 @@ div hr {
   mix-blend-mode: overlay;
   opacity: 0.3;
 }
+
 a {
   text-decoration: none;
   float: right;
 }
+
 button {
   background: transparent;
   border: none;
+}
+
+.event-card-title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 35px;
+
+  color: #FFFFFF;
+
+  mix-blend-mode: overlay;
+  opacity: 0.7;
+}
+
+.eventDetails{
+  text-transform: capitalize;
+}
+
+.eventCard-container{
+  height: 55%;
+  margin-top: 48px;
+}
+
+.eventCard-container > div:not(:nth-child(3)) {
+  height: 100%;
+  width: 30%;
+  margin-right: 56px;
+}
+
+.summary{
+  margin-top: 8px;
+}
+
+.box1 > a {
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
 }
