@@ -26,6 +26,7 @@
   font-size: 21px;
   font-family: "Poppins";
   font-weight: 600;
+  cursor: pointer;
 }
 
 .nav-items > * > img{
