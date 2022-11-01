@@ -1,5 +1,4 @@
 .overlay {
-
   background: white;
   /* mix-blend-mode: overlay; */
   background-size: cover;
@@ -55,4 +54,10 @@ section {
 .icons{
   height: 0.9em;
   width: 0.9em;
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    height : 85vh;
+  }
 }
