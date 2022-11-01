@@ -1,63 +1,53 @@
-#navbar1{
-    display: flex;
-    justify-content: center;
-    position: fixed;
-
-/* left: 255px; */
-bottom: 60px;
-left: 255px;
-width: 64%;
-    box-shadow : 14px 0px 48px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(2.5px);
-
-}
-
-#navbar2{
- 
- 
+.navbar-container{
   position: fixed;
-
-left:0;
-bottom: 1px;
-
-  box-shadow : 14px 0px 48px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(2.5px);
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 5%;
 }
 
-/* .navbar{
-    
-} */
-
-li{
-    font-size: 25px;
-    font-weight: 100;
-    color: aliceblue;
-}
-.nav-link {
+.nav-items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
+  width: max-content;
+  padding: 20px 60px ;
+  border-radius: 6px;
 }
 
+.active{
+  opacity: 1 !important;
+}
 
-  @media screen and (max-width: 995px) {
-   #mainnav{
+.nav-items > * {
+  margin-right: 30px;
+  font-size: 21px;
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.nav-items > * > img{
+  display: none;
+}
+
+.nav-items > *:last-child{
+  margin-right: 0%;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .nav-items > * > span{
     display: none;
-   }
-   
-   .navbar-nav{
-     margin: 5px;
-     display: inline;
-     float: left;
-   }
-   .nav-item{
-    float: left;
-   }
-  
   }
 
-  
-  @media screen and (min-width: 996px) {
-    #mobailnav{
-     display: none;
-    }
-   }
+  .nav-items > * > img{
+    display: block;
+  }
+ 
+  .nav-items{
+    padding: 24px 60px;
+  }
+
+}
