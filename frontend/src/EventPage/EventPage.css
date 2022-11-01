@@ -107,12 +107,20 @@ button {
 .eventCard-container{
   height: 55%;
   margin-top: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .eventCard-container > div:not(:nth-child(3)) {
   height: 100%;
   width: 30%;
   margin-right: 56px;
+}
+
+.eventCard-container > div:nth-child(3){
+  display: flex;
 }
 
 .summary{
@@ -125,4 +133,27 @@ button {
   position: absolute;
   bottom: 10px;
   right: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .eventCard-container{
+    flex-direction: column;
+  }
+
+  .eventCard-container > div:nth-child(2){
+    display: none;
+  }
+
+  .eventCard-container > div:nth-child(1) , .eventCard-container > div:nth-child(3){
+    width: 100%;
+    height: max-content;
+    margin: 0 0 20px 0;
+    justify-content: center;
+  }
+
+  .titles{
+    font-size: 24px;
+  }
+
 }

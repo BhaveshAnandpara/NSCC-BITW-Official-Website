@@ -44,12 +44,12 @@ function EventPage() {
           </center>
         </h1>
 
-        <div className="row eventCard-container  justify-content-center align-items-center">
+        <div className="eventCard-container ">
           {slice.map((data, i) => {
 
             return (
 
-              <div className=" glass col-md-3  box1" key={i}>
+              <div className=" glass  box1" key={i}>
                   <p className=" overlay event-card-title">{data.name}</p>
                   <p>{eventDetails(data.eventDetails)}</p>
                   <p className="multiline summary" >
@@ -60,15 +60,14 @@ function EventPage() {
             );
           })}
 
-          <div className="col-md-2  box1 glass">
-            <div className="p-3 text-align-center">
+          <div className=" box1 glass">
+
 
               <button box1 className="box1">
                 More Event
                 <ArrowForwardIcon />
               </button>
 
-            </div>
           </div>
 
         </div>
