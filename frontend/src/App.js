@@ -1,8 +1,8 @@
 import EventPage from './EventPage/EventPage';
-// import Navbar from './Navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
-// import Home from './Home/Home';
+import Social from './Social/Social';
+
 import './App.css'
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <div className="bg-spin"></div>
 
         <Routes>
-          <Route path='/' element={<EventPage />} />
+          <Route path='/' element={<Social />} />
         </Routes>
         <Navbar/>
     </>
