@@ -26,66 +26,6 @@
   font-weight: 700;
 }
 
-h2 {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.textLeft {
-  text-align: left;
-}
-
-.loadingDiv {
-  height: 100vh;
-  display: grid;
-  place-items: center;
-}
-
-.card {
-  width: 450px;
-  border: none;
-  border-radius: 10px;
-  /* background: url('./images/background.jpg') no-repeat center center / cover; */
-  margin: auto;
-}
-
-.image {
-  min-width: 155px;
-  margin-right: 20px;
-}
-
-.stats {
-  /* background: url('./images/background.jpg') no-repeat center center / cover; */
-  color: #000 !important;
-}
-
-.articles {
-  font-size: 10px;
-  color: #a1aab9;
-}
-
-.number1 {
-  font-weight: 500;
-}
-
-.followers {
-  font-size: 10px;
-  color: #a1aab9;
-}
-
-.number2 {
-  font-weight: 500;
-}
-
-.rating {
-  font-size: 10px;
-  color: #a1aab9;
-}
-
-.number3 {
-  font-weight: 500
-}
-
 @media only screen and (max-width: 600px) {
 
   .team-content {
