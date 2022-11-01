@@ -8,20 +8,34 @@
 
 }
 
+
+
 body {
+  background: #000;
+  height: 100vh;
+  width: 100vw;
   background-image: url(../src/assets/Images/bg.jpg);
   background-size: cover;
+  overflow-x: hidden;
+  background-attachment: fixed;
+}
+
+.bg{
+  overflow: hidden;
+  width: 100vw;
   height: 100vh;
-  width: 100%;
+  position: absolute;
+  z-index: -10;
 }
 
 .bg-spin {
   width: 100vw;
-  height: 99vh;
+  height: 100vh;
   position: absolute;
   z-index: -10;
   background-image: url(../src/assets/Images/Group\ 2.svg);
   background-size: cover;
+  overflow: hidden;
 }
 
 .border {
@@ -31,7 +45,7 @@ body {
 section {
   display: block;
   width: 100%;
-  height: 75vh;
+  height: 100vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -55,6 +69,8 @@ section {
   height: 0.9em;
   width: 0.9em;
 }
+
+
 
 @media only screen and (max-width: 600px) {
   section {

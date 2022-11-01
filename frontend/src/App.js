@@ -6,17 +6,18 @@ import Team from './team/Team';
 import AboutUs from './AboutUs/AboutUs';
 import HeroSection from './HeroSection/HeroSection';
 import './App.css'
+import HomePage from './HomePage/HomePage';
 
 
 function App() {
   return (
     <>
-      <div className="bg-spin"></div>
-
-        <Routes>
-          <Route path='/' element={<HeroSection />} />
-        </Routes>
-        <Navbar/>
+        <HeroSection />
+        <AboutUs />
+        <Team />
+        <EventPage />
+        <Social />
+        <Navbar />
     </>
   );
 }
