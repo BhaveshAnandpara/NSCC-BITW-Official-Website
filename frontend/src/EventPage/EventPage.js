@@ -35,11 +35,11 @@ function EventPage() {
 
   return (
     <>
-      <section className=" container  overflow-hidden">
+      <section className=" container ">
 
         <h1 className="titles" >
           <center>
-            Our Recent EVENTS 
+            Our Recent EVENTS
             <img className="m-4" src={speaker} alt="" />
           </center>
         </h1>
@@ -50,12 +50,12 @@ function EventPage() {
             return (
 
               <div className=" glass  box1" key={i}>
-                  <p className=" overlay event-card-title">{data.name}</p>
-                  <p>{eventDetails(data.eventDetails)}</p>
-                  <p className="multiline summary" >
-                    {data.summary}
-                  </p>
-                  <a className="overlay" >View More...</a>
+                <p className=" overlay event-card-title">{data.name}</p>
+                <p>{eventDetails(data.eventDetails)}</p>
+                <p className="multiline summary" >
+                  {data.summary}
+                </p>
+                <a className="overlay" >View More...</a>
               </div>
             );
           })}
@@ -63,10 +63,10 @@ function EventPage() {
           <div className=" box1 glass">
 
 
-              <button box1 className="box1">
-                More Event
-                <ArrowForwardIcon />
-              </button>
+            <button box1 className="box1">
+              More Event
+              <ArrowForwardIcon />
+            </button>
 
           </div>
 
