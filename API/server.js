@@ -21,6 +21,12 @@ const { initializeApp } = require("firebase/app");
 const { getFirestore, collection, addDoc, getDocs } = require("firebase/firestore");
 
 
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.header("Access-Control-Allow-Headers", "x-access-token, Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 const firebaseConfig = {
     apiKey: "AIzaSyCfzG7Hl5YeCYkH45M6bLYaFcpjwPh-vuk",
@@ -37,7 +43,7 @@ const db = getFirestore(server);
 
 const PORT = 5050
 
-app.post('/teams', upload.single('image'),  async (req, res) => {
+app.post('/teams', upload.single('image'), async (req, res) => {
 
     let data = req.body.data
     const ImageInformatiom = req.file
@@ -50,7 +56,7 @@ app.post('/teams', upload.single('image'),  async (req, res) => {
 
         data.forEach(member => {
             member.image = ImageInformatiom.path
-            const docRef = addDoc(collection(db, `teams/`), {member});
+            const docRef = addDoc(collection(db, `teams/`), { member });
         });
 
         res.status(200).json("Data Added")
@@ -66,17 +72,38 @@ app.post('/teams', upload.single('image'),  async (req, res) => {
 
 app.get('/teams', async (req, res) => {
 
-    let memberInfo = []
+    let coreTeam = []
+    let TechnicalTeam = []
+    let ManagmentTeam = []
+    let SocialMediaTeam = []
+    let ContentAndPRTeam = []
+
 
     try {
 
         const querySnapshot = await getDocs(collection(db, "teams/"));
+        
         querySnapshot.forEach((doc) => {
-            memberInfo.push(doc.data())
+
+            if (doc.data()['member'].designation == "Vice-President" || doc.data()['member'].designation == "President" || doc.data()['member'].designation == "Technical-Lead" || doc.data()['member'].designation == "Social-Media-and-Marketing-Lead" || doc.data()['member'].designation == "Content-and-PR-Head") {
+                coreTeam.push(doc.data()['member'])
+            }
+            else if (doc.data()['member'].designation == "Technical-Member") {
+                TechnicalTeam.push(doc.data()['member'])
+            }
+            else if (doc.data()['member'].designation == "Managment-Member") {
+                ManagmentTeam.push(doc.data()['member'])
+            }
+            else if (doc.data()['member'].designation == "SocialMedia-Member") {
+                SocialMediaTeam.push(doc.data()['member'])
+            }
+            else if (doc.data()['member'].designation == "ContentAndPR-Member") {
+                ContentAndPRTeam.push(doc.data()['member'])
+            }
         }
         );
-        res.json(memberInfo)
-
+        console.log({ coreTeam, TechnicalTeam, ManagmentTeam, SocialMediaTeam, ContentAndPRTeam })
+        res.json({ coreTeam, TechnicalTeam, ManagmentTeam, SocialMediaTeam, ContentAndPRTeam })
 
     } catch (e) {
         res.json(e)
@@ -85,7 +112,7 @@ app.get('/teams', async (req, res) => {
 
 })
 
-app.post('/setEvents', upload.array('images' , 10),  async (req, res) => {
+app.post('/setEvents', upload.array('images', 10), async (req, res) => {
 
     var data = req.body.data
     data = JSON.parse(data)
@@ -93,7 +120,7 @@ app.post('/setEvents', upload.array('images' , 10),  async (req, res) => {
     var paths = []
 
 
-    files.forEach((ele)=>{
+    files.forEach((ele) => {
         paths.push(ele.path)
     })
     // { data : { name  , date  ,eventDetails{  date , mode , games , speaker , etc} , desc , summary , thumbnail , images[] , videos[] } }
@@ -132,13 +159,13 @@ app.get('/getEvents', async (req, res) => {
 
             const eventDate = doc.data().date
 
-            let date = today.getDate() + "-" +  (today.getMonth() + 1) + "-" + today.getFullYear()
+            let date = today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear()
 
             date > eventDate ? recentEvents.push(doc.data()) : upcomingEvents.push(doc.data())
 
         }
         );
-        res.json({"EventInfo" : EventInfo , "upcomingEvents" : upcomingEvents , "recentEvents" : recentEvents })
+        res.json({ "EventInfo": EventInfo, "upcomingEvents": upcomingEvents, "recentEvents": recentEvents })
 
 
     } catch (e) {
