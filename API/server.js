@@ -4,14 +4,14 @@ var app = express();
 var bodyParser = require('body-parser');
 const multer = require('multer')
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, '../frontend/public/assets/')
+const storage = multer.diskStorage({ // notice you are calling the multer.diskStorage() method here, not multer()
+    destination: function(req, file, cb) {
+        cb(null, '../frontend/public/Media/')
     },
-    filename: function (req, file, cb) {
+    filename: function(req, file, cb) {
         cb(null, file.originalname)
     }
-})
+});
 
 const upload = multer({ storage: storage })
 
@@ -48,6 +48,8 @@ app.post('/teams', upload.single('image'), async (req, res) => {
     let data = req.body.data
     const ImageInformatiom = req.file
 
+    console.log(ImageInformatiom);
+
     data = JSON.parse(data)
     // Data -> "Name"   : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
 
@@ -82,7 +84,7 @@ app.get('/teams', async (req, res) => {
     try {
 
         const querySnapshot = await getDocs(collection(db, "teams/"));
-        
+
         querySnapshot.forEach((doc) => {
 
             if (doc.data()['member'].designation == "Vice-President" || doc.data()['member'].designation == "President" || doc.data()['member'].designation == "Technical-Lead" || doc.data()['member'].designation == "Social-Media-and-Marketing-Lead" || doc.data()['member'].designation == "Content-and-PR-Head") {
