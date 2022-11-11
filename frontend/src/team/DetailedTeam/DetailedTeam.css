@@ -76,11 +76,13 @@
     width: 120px ;
     overflow: hidden;
     border-radius: 50%;
+    margin: auto;
 }
 
 .profileImg > img {
     min-height: 120px;
     width: 120px ;
+
 }
 
 .icon{
@@ -89,9 +91,39 @@
 
 
 @media only screen and (max-width: 600px) {
+
+
+    .card-container{
+        width: 100%;
+    }
+
     .cards-container {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .team-card-container{
+        width: 90vw;
+    }
+
+    .name-desg>span:first-child {
+        font-size: 18px;
+    }
+
+    .name-desg>span:last-child {
+        font-size: 16px;
+    }
+
+    .icon{
+        width: 30px;
+        height: 30px;
+    }
+
+    .profileImg , .profileImg > img{
+        width: 100px;
+        height: 100px;
+    }
+    
+
 }
 
 @media only screen and (max-width: 900px) {
