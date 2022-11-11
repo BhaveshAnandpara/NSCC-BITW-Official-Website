@@ -1,11 +1,14 @@
 .cards-container {
-    width: 90%;
+    width: 100%;
     display: grid;
-    gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.card-container > h2{
+.card-container{
+    width: 90%;
+}
+
+.teams > h2{
     margin-top: 80px;
     margin-bottom: 24px;
 }
@@ -24,6 +27,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 32px;
 
 }
 
@@ -72,6 +76,15 @@
     width: 120px ;
     overflow: hidden;
     border-radius: 50%;
+}
+
+.profileImg > img {
+    min-height: 120px;
+    width: 120px ;
+}
+
+.icon{
+    cursor: pointer;
 }
 
 

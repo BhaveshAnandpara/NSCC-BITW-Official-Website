@@ -11,12 +11,13 @@ import instagram from '../../assets/Icons/insta-white.svg'
 import Linkedin from '../../assets/Icons/linkedin-white.svg'
 
 const card = (data) => {
-    // console.log((data.image).split('\\')[5]);
+    const arr = (data.image).split('\\')
+    console.log(arr[arr.length-1]);
     return (
         <>
             <div className="team-card-container ">
                 <div className="profileImg overlay">
-                    <img src={`/Media/${(data.image).split('\\')[5]}`} alt="profile" />
+                    <img src={`/Media/${arr[arr.length-1]}`} alt="profile" />
                 </div>
                 <div className="member-info ">
                     <div className="name-desg ">
@@ -24,9 +25,9 @@ const card = (data) => {
                         <span className='member-desgn overlay' >{data.designation}</span>
                     </div>
                     <div className="member-links">
-                        <img className='icon overlay' src={github} alt="" />
-                        <img className='icon overlay' src={instagram} alt="" />
-                        <img className='icon overlay' src={Linkedin} alt="" />
+                        <img className='icon overlay' onClick={()=>{window.open (`${data.links['Github']}` , '_blank')  }}  src={github} alt="" />
+                        <img className='icon overlay' onClick={()=>{window.open (`${data.links['Instagram']}` , '_blank')  }}  src={instagram} alt="" />
+                        <img className='icon overlay' onClick={()=>{window.open (`${data.links['LinkedIn']}` , '_blank')  }}  src={Linkedin} alt="" />
                     </div>
                 </div>
             </div>
@@ -98,25 +99,40 @@ function renderCards(data) {
     }
     return (
         <>
-            <h2>Core Team</h2>
-            <div className="cards-container">
-                {coreTeam}
+            <div className="teams">
+
+                <h2>Core Team</h2>
+                <div className="cards-container">
+                    {coreTeam}
+                </div>
             </div>
-            <h2>Technical Team</h2>
-            <div className="cards-container">
-                {TechnicalTeam}
+
+            <div className="teams ">
+                <h2>Technical Team</h2>
+                <div className="cards-container ">
+                    {TechnicalTeam}
+                </div>
             </div>
-            <h2>Managment Team</h2>
-            <div className="cards-container">
+
+            <div className="teams">
+                <h2>Managment Team</h2>
+                <div className="cards-container">
                 {ManagmentTeam}
+                </div>
             </div>
-            <h2>Social Media and Marketing Team</h2>
-            <div className="cards-container">
+
+            <div className="teams">
+                <h2>Social Media and Marketing Team</h2>
+                <div className="cards-container">
                 {SocialMediaTeam}
+                </div>
             </div>
-            <h2>PR and Content Team</h2>
-            <div className="cards-container">
+
+            <div className="teams">
+                <h2>PR and Content Team</h2>
+                <div className="cards-container">
                 {ContentAndPRTeam}
+                </div>
             </div>
         </>
     )
