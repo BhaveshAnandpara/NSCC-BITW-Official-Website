@@ -1,0 +1,88 @@
+.cards-container {
+    width: 90%;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card-container > h2{
+    margin-top: 80px;
+    margin-bottom: 24px;
+}
+
+.team-card-container {
+    width: 40vw;
+    max-width: 500px;
+    background: linear-gradient(186.43deg, rgba(255, 255, 255, 0.08) 1.03%, rgba(255, 255, 255, 0.1) 99.57%);
+    box-shadow: 14px 0px 48px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(2.5px);
+
+    border-radius: 6px;
+    padding: 23px 10px 23px 24px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.member-info {
+    margin-left: 24px;
+    height: 100%;
+}
+
+.name-desg {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.name-desg>span:first-child {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    color: #FFFFFF;
+    margin: 0%;
+}
+
+.name-desg>span:last-child {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0%;
+}
+
+.member-links{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.member-links > * {
+    margin-right: 20px;
+}
+
+.profileImg{
+    height: 120px;
+    width: 120px ;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

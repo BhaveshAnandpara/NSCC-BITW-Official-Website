@@ -1,32 +1,16 @@
-import EventPage from './EventPage/EventPage';
-import { Route, Routes } from 'react-router-dom';
-import Navbar from './Navbar/Navbar';
-import Social from './Social/Social';
-import Team from './team/Team';
-import AboutUs from './AboutUs/AboutUs';
-import HeroSection from './HeroSection/HeroSection';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
+import Home from './Home/Home';
+import DetailedTeam from './team/DetailedTeam/DetailedTeam';
 
 
 function App() {
   return (
     <>
-      <div className="page">
-        <HeroSection />
-      </div>
-      <div className="page">
-        <AboutUs />
-      </div>
-      <div className="page">
-        <Team />
-      </div>
-      <div className="page">
-        <EventPage />
-      </div>
-      <div className="page">
-        <Social />
-      </div>
-        <Navbar />
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/team' element={<DetailedTeam/>} />
+      </Routes>
     </>
   );
 }
