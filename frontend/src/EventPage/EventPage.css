@@ -3,7 +3,7 @@ p{
   margin: 0;
 }
 
-.box1 {
+.box1, .box {
   width: fit-content;
   /* Note: backdrop-filter has minimal browser support */
 
@@ -118,7 +118,7 @@ button {
   
 }
 
-.box1 > a {
+.box1 > a, .box > a {
   text-decoration: none;
   color: white;
   position: absolute;
@@ -132,7 +132,7 @@ button {
     flex-direction: column;
   }
 
-  .eventCard-container > div:nth-child(2){
+  .box1:nth-child(2){
     display: none;
   }
 
@@ -144,7 +144,7 @@ button {
   }
 
   .titles{
-    font-size: 24px;
+    font-size: 23px;
   }
 
 }

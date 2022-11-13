@@ -118,6 +118,9 @@ app.post('/setEvents', upload.array('images', 10), async (req, res) => {
 
     var data = req.body.data
     data = JSON.parse(data)
+
+    console.log(data);
+
     const files = req.files
     var paths = []
 

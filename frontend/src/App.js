@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
 import DetailedEventPage from './EventPage/DetailedEventPage/DetailedEventPage';
+import EventPage from './EventPage/EventPage';
 import Home from './Home/Home';
 import DetailedTeam from './team/DetailedTeam/DetailedTeam';
 
@@ -8,11 +9,14 @@ import DetailedTeam from './team/DetailedTeam/DetailedTeam';
 function App() {
   return (
     <>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/team' element={<DetailedTeam/>} />
-        <Route path='/events' element={<DetailedEventPage/>} />
-      </Routes>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/team' element={<DetailedTeam />} />
+          <Route path='/event' element={<EventPage />} />
+          <Route path='/events' element={<DetailedEventPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

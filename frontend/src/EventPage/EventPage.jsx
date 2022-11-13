@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import CampaignIcon from "@mui/icons-material/Campaign";
 import * as ReactDOM from 'react-dom/client';
-
+import { Link } from "react-router-dom";
 
 import speaker from '../assets/Icons/speaker.svg'
 import axios from 'axios'
@@ -70,11 +70,10 @@ function EventPage() {
       <div className=" box1 glass">
 
 
-        <button box1 className="box1">
-          More Event
+        <button box1 className="box1" onClick={()=>{window.location.href = '/events'}} >
+        More Event
           <ArrowForwardIcon />
         </button>
-
       </div>
 
 
