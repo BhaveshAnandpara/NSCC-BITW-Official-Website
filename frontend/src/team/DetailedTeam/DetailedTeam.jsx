@@ -22,7 +22,7 @@ const card = (data) => {
                 <div className="member-info ">
                     <div className="name-desg ">
                         <span className='member-name' >{data.name}</span>
-                        <span className='member-desgn overlay' >{data.designation}</span>
+                        <span className='member-desgn overlay' >{(data.Role)}</span>
                     </div>
                     <div className="member-links">
                         <img className='icon overlay' onClick={() => { window.open(`${data.links['Github']}`, '_blank') }} src={github} alt="" />

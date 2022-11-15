@@ -82,9 +82,9 @@ function EventPage() {
                         <p className=" overlay event-card-title">{data.name}</p>
                         <p>{eventDetails(data.eventDetails)}</p>
                         <p className="multiline summary" >
-                            {data.summary}
+                            {data.desc}
                         </p>
-                        <a className="overlay" >View More...</a>
+                        <a className="overlay" onClick={() => { window.location.href = `/event?${data.name}` }} >View More...</a>
                     </div>
                 );
 
