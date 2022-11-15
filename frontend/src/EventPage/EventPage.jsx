@@ -32,10 +32,10 @@ function EventPage() {
 
         if (response.data['upcomingEvents'].length < 2) {
 
-          arr.concat(response.data['upcomingEvents'])
-
+          arr = arr.concat(response.data['upcomingEvents'])
           console.log(arr);
-          arr.concat((response.data['recentEvents'])[1 - response.data['upcomingEvents'].length])
+
+          arr = arr.concat((response.data['recentEvents'])[1 - response.data['upcomingEvents'].length])
           setEvents(arr)
 
         }
@@ -43,7 +43,6 @@ function EventPage() {
 
           arr = arr.concat((response.data['upcomingEvents'])[0], (response.data['upcomingEvents'])[1])
           console.log(arr);
-
           setEvents(arr)
         }
 
@@ -62,30 +61,31 @@ function EventPage() {
 
     const root = ReactDOM.createRoot(document.getElementById('eventCardContainer'))
 
-    const eventCards = Cards(events)
+    try {
+      const eventCards = Cards(events)
 
-    root.render(<>
-      {eventCards}
+      root.render(<>
+        {eventCards}
 
-      <div className=" box1 glass">
+        <div className=" box1 glass">
+
+          <button box1 className="box1" onClick={() => { window.location.href = '/events' }} >
+            More Event
+            <ArrowForwardIcon />
+          </button>
+        </div>
 
 
-        <button box1 className="box1" onClick={()=>{window.location.href = '/events'}} >
-        More Event
-          <ArrowForwardIcon />
-        </button>
-      </div>
+      </>)
+    } catch (e) {
 
-
-    </>)
+    }
   }, [events])
 
 
   function Cards(events) {
 
     const eventCards = []
-
-    console.log(events);
 
     try {
 
@@ -97,7 +97,7 @@ function EventPage() {
             <p className=" overlay event-card-title">{data.name}</p>
             <p>{eventDetails(data.eventDetails)}</p>
             <p className="multiline summary" >
-              {data.summary}
+              {data.desc}
             </p>
             <a className="overlay" >View More...</a>
           </div>
@@ -121,7 +121,7 @@ function EventPage() {
       if (key !== 'date' && key !== 'mode') {
         result.unshift(<><p className="eventDetails" > {key} : {data[key]} </p><hr></hr></>)
       }
-      else{
+      else {
         result.push(<p className="eventDetails" > {key} : {data[key]} </p>)
       }
 
