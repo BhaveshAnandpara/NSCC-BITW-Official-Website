@@ -112,13 +112,13 @@ export default function Events() {
 
                         <HorizontalScroll className='eventImagesContainer' >
                             {(data.images).map((pic, idx) => (
-                                <embed className='eventImg' type="image/jpg" src={`/Media/${getPath(pic)}`} key={idx}></embed>
+                                <embed className='eventImg' loading='lazy' type="image/jpg" src={`/Media/${getPath(pic)}`} key={idx}></embed>
                                         ))}
                         </HorizontalScroll>
 
                         <HorizontalScroll className='eventVideosContainer' >
                             {(data.videos).map((vid, idx) => (
-                                <embed className='eventImg' autoplay="false" type="video/webm"  src={`/Media/${getPath(vid)}`} key={idx}></embed>
+                                <embed className='eventImg' loading='lazy' autoplay="false" type="video/webm"  src={`/Media/${getPath(vid)}`} key={idx}></embed>
                                         ))}
                         </HorizontalScroll>
 
