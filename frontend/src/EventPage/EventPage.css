@@ -126,6 +126,10 @@ button {
   right: 20px;
 }
 
+.viewMore{
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
 
   .eventCard-container{
@@ -145,6 +149,11 @@ button {
 
   .titles{
     font-size: 23px;
+  }
+
+  .summary{
+  margin-bottom: 16px;
+
   }
 
 }

@@ -93,7 +93,7 @@ export default function Events() {
                 <>
                     <div className="eventHeader">
                         <p className='overlay eventTitle' >{data.name}</p>
-                        {data.eventDetails['speaker'] ? <p  > Speaker : {data.eventDetails['speaker']} </p> : <p > Games : {data.eventDetails['games']} </p>}
+                        {data.eventDetails['speaker'] ? <p  > Speaker : {data.eventDetails['speaker']} </p> : <p > Games : {data.eventDetails['game']} </p>}
                     </div>
                     <div className="info">
                         <div className="poster"><img src={ "\\Media\\" + `${getPath(data.poster)}`}  alt="" /></div>
