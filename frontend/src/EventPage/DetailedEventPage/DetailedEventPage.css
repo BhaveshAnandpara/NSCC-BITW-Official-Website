@@ -1,16 +1,39 @@
-/* .container{
-
+.eventContainer{
     height: 100vh;
-    max-width: 99vw !important;
-
+    max-width: 100vw;
 }
 
-.eventCardContainer {
-    width: 100%;
+.rootContainer{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 40px;
+    height: max-content;
+    width: 90vw;
 }
 
-.eventBox{
-    width: 30vw !important;
-} */
+.card {
+    height: 100%;
+    width: 80% !important;
+    margin-right: 56px;
+  }
+  
+
+  #recentEventTitles{
+    margin-top: 40px;
+  }
+
+  @media only screen and (max-width: 600px) {
+
+  .rootContainer{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+
+  .card{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96% !important;
+  }
+
+  }

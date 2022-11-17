@@ -18,7 +18,7 @@ export default function Team() {
       We have an amazing team filled with creative and hard working minds
       </div>
 
-      <button className='btn glass' > <span className='overlay'> The Team </span></button>
+      <button className='btn glass'  onClick={()=>{window.location.href = '/team'}} > <span className='overlay'> The Team </span></button>
 
     </section>
     </>
