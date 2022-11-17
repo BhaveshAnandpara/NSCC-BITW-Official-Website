@@ -43,16 +43,15 @@ const db = getFirestore(server);
 
 const PORT = 5050
 
-app.post('/teams', upload.single('image'), async (req, res) => {
+app.post('/teams', upload.array('images'), async (req, res) => {
 
-    let data = req.body.data
-    const ImageInformatiom = req.file
-
-    console.log(ImageInformatiom);
-
+    var data = req.body.data
+    console.log(data);
     data = JSON.parse(data)
-    // Data -> "Name"   : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
 
+    const ImageInformatiom = req.files
+
+    // Data -> "Name"   : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
 
     try {
 
@@ -64,9 +63,7 @@ app.post('/teams', upload.single('image'), async (req, res) => {
         res.status(200).json("Data Added")
 
     } catch (e) {
-
         console.error("Error adding document: ", e);
-
     }
 
 })

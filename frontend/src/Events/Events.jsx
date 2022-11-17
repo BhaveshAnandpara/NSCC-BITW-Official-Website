@@ -52,7 +52,6 @@ export default function Events() {
     }, [event])
 
 
-
     const imageContainer = (images)=>{
 
         let imageArr = []
@@ -109,6 +108,7 @@ export default function Events() {
                     </div>
                     <div className="eventMedias " id='eventMedia'>
 
+                        <p className='overlay titles ' >Checkout the Glipmses of Event</p>
 
                         <HorizontalScroll className='eventImagesContainer' >
                             {(data.images).map((pic, idx) => (
@@ -121,8 +121,8 @@ export default function Events() {
                                 <embed className='eventImg' loading='lazy' autoplay="false" type="video/webm"  src={`/Media/${getPath(vid)}`} key={idx}></embed>
                                         ))}
                         </HorizontalScroll>
-
                     </div>
+                    
                 </>
             )
         } catch (e) {
