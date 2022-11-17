@@ -3,9 +3,9 @@ import bubble from '../assets/Icons/bubble.svg'
 
 import { Container } from 'react-bootstrap'
 import './Social.css'
-import { TbMessageCircle } from "react-icons/tb";
+// import { TbMessageCircle } from "react-icons/tb";
 import { FaDiscord, FaInstagram, FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { hover } from '@testing-library/user-event/dist/hover';
+// import { hover } from '@testing-library/user-event/dist/hover';
 
 
 export default function Social() {

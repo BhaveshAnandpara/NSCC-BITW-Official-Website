@@ -5,10 +5,10 @@ var bodyParser = require('body-parser');
 const multer = require('multer')
 
 const storage = multer.diskStorage({ // notice you are calling the multer.diskStorage() method here, not multer()
-    destination: function(req, file, cb) {
+    destination: function (req, file, cb) {
         cb(null, '../frontend/public/Media/')
     },
-    filename: function(req, file, cb) {
+    filename: function (req, file, cb) {
         cb(null, file.originalname)
     }
 });
@@ -118,19 +118,33 @@ app.post('/setEvents', upload.array('images', 10), async (req, res) => {
 
     var data = req.body.data
     data = JSON.parse(data)
+
+    console.log(data);
+
     const files = req.files
     var paths = []
-
+    let poster = ''
+    let videos = []
 
     files.forEach((ele) => {
-        paths.push(ele.path)
+        if( (ele.path).includes('poster') ){
+            poster = ele.path
+        }
+        else if( (ele.path).includes('video') ){
+            videos.push(ele.path)
+        }
+        else{
+            paths.push(ele.path)
+        }
     })
     // { data : { name  , date  ,eventDetails{  date , mode , games , speaker , etc} , desc , summary , thumbnail , images[] , videos[] } }
 
     try {
 
         data.forEach(event => {
-            event.iamges = paths
+            event.images = paths
+            event.poster = poster
+            event.videos = videos
             const docRef = addDoc(collection(db, `events/`), event);
 
         });
@@ -138,9 +152,7 @@ app.post('/setEvents', upload.array('images', 10), async (req, res) => {
         res.status(200).json("Event Added")
 
     } catch (e) {
-
         console.error("Error adding document: ", e);
-
     }
 
 })
