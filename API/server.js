@@ -44,19 +44,24 @@ const db = getFirestore(server);
 const PORT = 5050
 
 app.post('/teams', upload.array('images'), async (req, res) => {
-
-    var data = req.body.data
-    console.log(data);
-    data = JSON.parse(data)
-
-    const ImageInformatiom = req.files
-
-    // Data -> "Name"   : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
-
     try {
 
+        var data = req.body.data
+        data = JSON.parse(data)
+        const ImageInformatiom = req.files
+
+        // console.log(ImageInformatiom.path);
+        // Data -> "Name"   : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
+
+
         data.forEach(member => {
-            member.image = ImageInformatiom.path
+            ImageInformatiom.forEach((img) => {
+                const profile = ((img.originalname).split('.')[0]).replaceAll("_", " ")
+                console.log(img);
+                if (member.name === profile) {
+                    member.image = img.path
+                }
+            })
             const docRef = addDoc(collection(db, `teams/`), { member });
         });
 
@@ -69,9 +74,11 @@ app.post('/teams', upload.array('images'), async (req, res) => {
 })
 
 
+
 app.get('/teams', async (req, res) => {
 
     let coreTeam = []
+    let coreArr = []
     let TechnicalTeam = []
     let ManagmentTeam = []
     let SocialMediaTeam = []
@@ -84,7 +91,13 @@ app.get('/teams', async (req, res) => {
 
         querySnapshot.forEach((doc) => {
 
-            if (doc.data()['member'].designation == "Vice-President" || doc.data()['member'].designation == "President" || doc.data()['member'].designation == "Technical-Lead" || doc.data()['member'].designation == "Social-Media-and-Marketing-Lead" || doc.data()['member'].designation == "Content-and-PR-Head") {
+            if (doc.data()['member'].designation === "President") {
+                coreArr[0] = doc.data()['member']
+            }
+            else if (doc.data()['member'].designation === "Vice-President") {
+                coreArr[1] = doc.data()['member']
+            }
+            else if (doc.data()['member'].designation == "Technical-Lead" || doc.data()['member'].designation == "Social-Media-and-Marketing-Lead" || doc.data()['member'].designation == "Content-and-PR-Head") {
                 coreTeam.push(doc.data()['member'])
             }
             else if (doc.data()['member'].designation == "Technical-Member") {
@@ -101,10 +114,14 @@ app.get('/teams', async (req, res) => {
             }
         }
         );
-        console.log({ coreTeam, TechnicalTeam, ManagmentTeam, SocialMediaTeam, ContentAndPRTeam })
-        res.json({ coreTeam, TechnicalTeam, ManagmentTeam, SocialMediaTeam, ContentAndPRTeam })
+
+
+        console.log([...coreArr, ...coreTeam]);
+
+        res.json({ coreTeam: [...coreArr, ...coreTeam], TechnicalTeam, ManagmentTeam, SocialMediaTeam, ContentAndPRTeam })
 
     } catch (e) {
+        console.log(e);
         res.json(e)
 
     }
@@ -124,13 +141,13 @@ app.post('/setEvents', upload.array('images', 10), async (req, res) => {
     let videos = []
 
     files.forEach((ele) => {
-        if( (ele.path).includes('poster') ){
+        if ((ele.path).includes('poster')) {
             poster = ele.path
         }
-        else if( (ele.path).includes('video') ){
+        else if ((ele.path).includes('video')) {
             videos.push(ele.path)
         }
-        else{
+        else {
             paths.push(ele.path)
         }
     })
