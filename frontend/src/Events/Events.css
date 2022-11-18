@@ -122,6 +122,7 @@
 
     .eventSummary{
         margin-top: 40px;
+        white-space: pre-wrap;
     }
 
     .eventImg{
