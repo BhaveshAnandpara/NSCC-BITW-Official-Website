@@ -50,6 +50,7 @@ app.post('/teams', upload.array('images'), async (req, res) => {
         data = JSON.parse(data)
         const ImageInformatiom = req.files
 
+        console.log(ImageInformatiom);
         // console.log(ImageInformatiom.path);
         // Data -> "Name"   : "{ Name , Team , Image , { links : Linkedin , Instagram , Github } }"
 
@@ -57,8 +58,9 @@ app.post('/teams', upload.array('images'), async (req, res) => {
         data.forEach(member => {
             ImageInformatiom.forEach((img) => {
                 const profile = ((img.originalname).split('.')[0]).replaceAll("_", " ")
-                console.log(img);
+
                 if (member.name === profile) {
+                    console.log("Nice");
                     member.image = img.path
                 }
             })
@@ -116,7 +118,7 @@ app.get('/teams', async (req, res) => {
         );
 
 
-        console.log([...coreArr, ...coreTeam]);
+        // console.log([...coreArr, ...coreTeam]);
 
         res.json({ coreTeam: [...coreArr, ...coreTeam], TechnicalTeam, ManagementTeam, SocialMediaTeam, ContentAndPRTeam })
 

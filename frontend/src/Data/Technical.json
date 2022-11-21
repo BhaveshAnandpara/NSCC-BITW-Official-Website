@@ -37,7 +37,7 @@
 	},
 {
 
-	"name" : "Heet Pande ",
+	"name" : "Heet Pande",
 	"designation" : "Technical-Member",
 	"image":"",
 	"Roles": "Web Developer"
@@ -49,7 +49,7 @@
 	},
 {
 
-	"name" : "Ganesh Golhar ",
+	"name" : "Ganesh Golhar",
 	"designation" : "Technical-Member",
 	"image":"",
 	"Roles":"Web Developer"
@@ -73,7 +73,7 @@
 	},
 {
 
-	"name" : "Tilak Talwekar ",
+	"name" : "Tilak Talwekar",
 	"designation" : "Technical-Member",
 	"image":"",
 	"Roles":"Web Developer"
@@ -82,4 +82,5 @@
 		"Instagram" : "https://instagram.com/tilaktalwekar?igshid=YmMyMTA2M2Y=",
 		"LinkedIn" : "https://www.linkedin.com/in/tilak-talwekar-820a48223"
 			}
-	}]
+	}
+]

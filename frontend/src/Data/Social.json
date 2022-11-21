@@ -1,15 +1,4 @@
-[{
-
-	"name" : "Karan Dhewle",
-	"designation" : "Social Media and Marketing Member",
-	"image":"",
-	"Roles": "Graphic designer"
-		,"links"  : {
-		"Github":"",
-		"Instagram" : "https://instagram.com/_.karandhewle._?igshid=YmMyMTA2M2Y=",
-		"LinkedIn" : "https://www.linkedin.com/in/karan-dhewle"
-			}
-	},
+[
 {
 
 	"name" : "Purva Dhopade",
@@ -48,7 +37,7 @@
 	},
 {
 
-	"name" : "Dwij Naranje ",
+	"name" : "Dwij Naranje",
 	"designation" : "SocialMedia-Member",
 	"image":"",
 	"Roles":"Graphic Designer"
@@ -60,7 +49,7 @@
 	},
 {
 
-	"name" : "Payal Ghanmode ",
+	"name" : "Payal Ghanmode",
 	"designation" : "SocialMedia-Member",
 	"image":"",
 	"Roles":"Graphic Designer"
@@ -85,7 +74,7 @@
 	},
 {
 
-	"name" : "Ankit Nagdeve ",
+	"name" : "Ankit Nagdeve",
 	"designation" : "SocialMedia-Member",
 	"image":"",
 	"Roles":"Video Editor"

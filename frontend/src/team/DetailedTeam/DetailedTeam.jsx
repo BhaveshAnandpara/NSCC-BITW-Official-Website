@@ -11,18 +11,19 @@ import instagram from '../../assets/Icons/insta-white.svg'
 import Linkedin from '../../assets/Icons/linkedin-white.svg'
 
 const card = (data) => {
+    console.log(data);
     const arr = (data.image).split('\\')
     console.log(arr[arr.length - 1]);
     return (
         <>
             <div className="team-card-container ">
                 <div className="profileImg overlay">
-                    <img src={`/Media/${arr[arr.length - 1]}`} alt="profile" />
+                    <img loading='lazy' src={`/Media/${arr[arr.length - 1]}`} alt="profile" />
                 </div>
                 <div className="member-info ">
                     <div className="name-desg ">
                         <span className='member-name' >{data.name}</span>
-                        <span className='member-desgn overlay' >{(data.role)}</span>
+                        <span className='member-desgn overlay' >{(data.Roles)}</span>
                     </div>
                     <div className="member-links">
                         <img className='icon overlay' onClick={() => { window.open(`${data.links['Github']}`, '_blank') }} src={github} alt="" />
@@ -46,6 +47,7 @@ function renderCards(data) {
     console.log(data);
 
     for (const key in data) {
+        
         if (key == "coreTeam") {
 
             data[key].forEach(element => {
