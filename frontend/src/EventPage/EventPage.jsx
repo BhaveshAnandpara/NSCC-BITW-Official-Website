@@ -36,6 +36,7 @@ function EventPage() {
           console.log(arr);
 
           arr = arr.concat((response.data['recentEvents'])[1 - response.data['upcomingEvents'].length])
+          console.log(arr);
           setEvents(arr)
 
         }

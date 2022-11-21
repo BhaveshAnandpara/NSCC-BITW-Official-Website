@@ -186,9 +186,11 @@ app.get('/getEvents', async (req, res) => {
 
             EventInfo.push(doc.data())
 
-            const eventDate = doc.data().date
+            let eventDate = doc.data().date
 
             let date = today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear()
+            date = date.replaceAll('-' , '');
+            eventDate = eventDate.replaceAll('-' , '');
 
             date > eventDate ? recentEvents.push(doc.data()) : upcomingEvents.push(doc.data())
 
