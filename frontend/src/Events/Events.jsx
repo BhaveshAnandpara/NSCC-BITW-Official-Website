@@ -103,12 +103,12 @@ export default function Events() {
                             <p className='eventDesc' >{data.desc}</p>
                         </div>
                     </div>
-                    <div className="eventSummary ">
-                        {data.summary}
-                    </div>
+                    <p className="eventSummary ">
+                        {JSON.parse(data.summary)}
+                    </p>
                     <div className="eventMedias " id='eventMedia'>
 
-                        <p className='overlay titles ' >Checkout the Glipmses of Event</p>
+                        <p className='overlay titles' >Checkout the Glipmses of Event</p>
 
                         <HorizontalScroll className='eventImagesContainer' >
                             {(data.images).map((pic, idx) => (
@@ -118,7 +118,7 @@ export default function Events() {
 
                         <HorizontalScroll className='eventVideosContainer' >
                             {(data.videos).map((vid, idx) => (
-                                <embed className='eventImg' loading='lazy' autoplay="false" type="video/webm"  src={`/Media/${getPath(vid)}`} key={idx}></embed>
+                                <video controls muted autoPlay='false' className='eventImg' loading='lazy'  type="video/webm"  src={`/Media/${getPath(vid)}`} key={idx}  ></video>
                                         ))}
                         </HorizontalScroll>
                     </div>

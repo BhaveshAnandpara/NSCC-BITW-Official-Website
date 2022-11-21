@@ -2,7 +2,7 @@ import React from 'react'
 import './DetailedTeam.css'
 import hands from '../../assets/Icons/hands.svg'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import {useEffect } from 'react'
 import * as ReactDOM from 'react-dom/client';
 
 
@@ -37,7 +37,6 @@ const card = (data) => {
 }
 
 function renderCards(data) {
-    const arr = []
     let coreTeam = []
     let TechnicalTeam = []
     let ManagementTeam = []
@@ -48,7 +47,7 @@ function renderCards(data) {
 
     for (const key in data) {
         
-        if (key == "coreTeam") {
+        if (key === "coreTeam") {
 
             data[key].forEach(element => {
                 coreTeam.push(
@@ -58,7 +57,7 @@ function renderCards(data) {
 
         }
 
-        if (key == "TechnicalTeam") {
+        if (key === "TechnicalTeam") {
 
             data[key].forEach(element => {
                 TechnicalTeam.push(
@@ -68,7 +67,7 @@ function renderCards(data) {
 
         }
 
-        if (key == "ManagementTeam") {
+        if (key === "ManagementTeam") {
 
             data[key].forEach(element => {
                 ManagementTeam.push(
@@ -78,7 +77,7 @@ function renderCards(data) {
 
         }
 
-        if (key == "SocialMediaTeam") {
+        if (key === "SocialMediaTeam") {
 
             data[key].forEach(element => {
                 SocialMediaTeam.push(
@@ -88,7 +87,7 @@ function renderCards(data) {
 
         }
 
-        if (key == "ContentAndPRTeam") {
+        if (key === "ContentAndPRTeam") {
 
             data[key].forEach(element => {
                 ContentAndPRTeam.push(
@@ -142,7 +141,6 @@ function renderCards(data) {
 
 export default function DetailedTeam() {
 
-    const [data, setData] = useState()
 
     useEffect(() => {
 
@@ -155,7 +153,6 @@ export default function DetailedTeam() {
             .then(function (response) {
 
                 // console.log(JSON.stringify(response.data));
-                setData(response.data)
 
                 const cards = renderCards(response.data)
                 console.log(cards);

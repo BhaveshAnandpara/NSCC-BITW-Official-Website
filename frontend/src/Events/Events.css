@@ -68,6 +68,7 @@
     margin-top: 80px;
     text-align: justify;
     line-height: 200%;
+    white-space: pre-wrap;
 }
 
 .eventDesc{
@@ -80,6 +81,13 @@
     display: block;
     width: 100%;
     height: max-content;
+}
+
+.eventMedias > p {
+    padding-left: 32px;
+    margin-bottom: 32px !important;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 #eventImages{

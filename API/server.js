@@ -135,8 +135,6 @@ app.post('/setEvents', upload.array('images', 10), async (req, res) => {
     var data = req.body.data
     data = JSON.parse(data)
 
-    console.log(data);
-
     const files = req.files
     var paths = []
     let poster = ''
@@ -161,6 +159,7 @@ app.post('/setEvents', upload.array('images', 10), async (req, res) => {
             event.images = paths
             event.poster = poster
             event.videos = videos
+            event.summary = JSON.stringify(event.summary)
             const docRef = addDoc(collection(db, `events/`), event);
 
         });
