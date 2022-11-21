@@ -39,7 +39,7 @@ function renderCards(data) {
     const arr = []
     let coreTeam = []
     let TechnicalTeam = []
-    let ManagmentTeam = []
+    let ManagementTeam = []
     let SocialMediaTeam = []
     let ContentAndPRTeam = []
 
@@ -69,7 +69,7 @@ function renderCards(data) {
         if (key == "ManagementTeam") {
 
             data[key].forEach(element => {
-                ManagmentTeam.push(
+                ManagementTeam.push(
                     card(element)
                 )
             });
@@ -117,7 +117,7 @@ function renderCards(data) {
             <div className="teams">
                 <h2>Management Team</h2>
                 <div className="cards-container">
-                    {ManagmentTeam}
+                    {ManagementTeam}
                 </div>
             </div>
 
