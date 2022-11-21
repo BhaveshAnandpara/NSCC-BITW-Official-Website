@@ -66,7 +66,7 @@ function renderCards(data) {
 
         }
 
-        if (key == "ManagmentTeam") {
+        if (key == "ManagementTeam") {
 
             data[key].forEach(element => {
                 ManagmentTeam.push(
@@ -115,7 +115,7 @@ function renderCards(data) {
             </div>
 
             <div className="teams">
-                <h2>Managment Team</h2>
+                <h2>Management Team</h2>
                 <div className="cards-container">
                     {ManagmentTeam}
                 </div>
