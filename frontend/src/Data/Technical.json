@@ -1,0 +1,85 @@
+[
+{
+
+	"name" : "Anurag Thakur",
+	"designation" : "Technical-Member",
+	"image":"",
+	"Roles":"Technical-Member"
+	,"links" : {
+		"Github":"https://github.com/anurag230702",
+		"Instagram" : "https://instagram.com/thakur_anurag_singh2307?igshid=ZDdkNTZiNTM=",
+		"LinkedIn" : "https://www.linkedin.com/in/anurag-thakur-435782211"
+			}
+	},
+{
+
+	"name" : "Pranav Ikhar",
+	"designation" : "Technical-Member",
+	"image":"",
+	"Roles": "Web Developer"
+	,"links" : {
+		"Github":"https://github.com/PRANAV15IKHAR",
+		"Instagram" : "https://instagram.com/_pranav_153",
+		"LinkedIn" : "https://www.linkedin.com/in/pranav-v-ikhar-2a2b8b238"
+			}
+	},
+{
+
+	"name" : "Ninad Lunge",
+	"designation" : "Technical-Member",
+	"image":"",
+	"Roles": "Web Developer"
+	,"links" : {
+		"Github":"https://github.com/Ninad-Lunge",
+		"Instagram" : "https://www.instagram.com/ninad_lunge/",
+		"LinkedIn" : "https://www.linkedin.com/in/ninad-lunge/"
+			}
+	},
+{
+
+	"name" : "Heet Pande ",
+	"designation" : "Technical-Member",
+	"image":"",
+	"Roles": "Web Developer"
+	,"links" : {
+		"Github":"https://github.com/heetjpande",
+		"Instagram" : "https://instagram.com/pandeheet",
+		"LinkedIn" : "https://www.linkedin.com/mwlite/in/heet-pande-6a4461128"
+			}
+	},
+{
+
+	"name" : "Ganesh Golhar ",
+	"designation" : "Technical-Member",
+	"image":"",
+	"Roles":"Web Developer"
+	,"links" : {
+		"Github":"",
+		"Instagram" : "",
+		"LinkedIn" : "https://www.linkedin.com/in/ganesh-golhar-827915211"
+			}
+	},
+	{
+
+	"name" : "Mahesh Rohane",
+	"designation" : "Technical-Member",
+	"image":"",
+	"Roles": "Web Developer"
+	,"links" : {
+		"Github":"https://github.com/Mahesh77r",
+		"Instagram" : "https://instagram.com/maheshrohane",
+		"LinkedIn" : "https://www.linkedin.com/in/mahesh-rohane-5986b6245"
+			}
+	},
+{
+
+	"name" : "Tilak Talwekar ",
+	"designation" : "Technical-Member",
+	"image":"",
+	"Roles":"Web Developer"
+	,"links" : {
+		"Github":"https://github.com/Tilaktalwekar",
+		"Instagram" : "https://instagram.com/tilaktalwekar?igshid=YmMyMTA2M2Y=",
+		"LinkedIn" : "https://www.linkedin.com/in/tilak-talwekar-820a48223"
+			}
+	}]

@@ -1,0 +1,69 @@
+[
+{
+
+	"name" : "Nayan Raut ",
+	"designation" : "ContentAndPR-Member",
+	"image":"",
+	"Roles":"Content Writer"
+	,"links" : {
+		"Github":"https://github.com/nayanraut1412",
+		"Instagram" : "https://www.instagram.com/nayanraut1412",
+		"LinkedIn" : "https://www.linkedin.com/in/nayanraut1412"
+			}
+	},
+
+	{
+
+	"name" : "Harshali Raut",
+	"designation" : "ContentAndPR-Member",
+	"image":"",
+	"Roles": "Content Writer"
+	,"links" : {
+		"Github":"https://github.com/Harshaliraut",
+		"Instagram" : "https://instagram.com/harshaligulabrao",
+		"LinkedIn" : "https://www.linkedin.com/in/harshali-raut-bb752921a"
+			}
+	},
+
+	{
+
+	"name" : "Pranjal Saboo",
+	"designation" : "ContentAndPR-Member",
+	"image":"",
+	"Roles":"Content Writer"
+	,"links" : {
+		"Github":"",
+		"Instagram" : "https://www.instagram.com/pranjal_saboo_07?r=nametag",
+		"LinkedIn" : "https://www.linkedin.com/in/pranjal-saboo-a60b93239"
+			}
+	},
+
+
+	{
+
+	"name" : "Ashwini Ukhalkar",
+	"designation" : "ContentAndPR-Member",
+	"image":"",
+	"Roles": "Public relation"
+	,"links" : {
+		"Github":"https://github.com/Ashwiniukhalkar",
+		"Instagram" : "http://www.instagram.com/ashwini_ukhalkar",
+		"LinkedIn" : "https://www.linkedin.com/in/ashwini-ukhalkar-7270ba246"
+			}
+	},
+
+
+	{
+
+	"name" : "Gunjan katre ",
+	"designation" : "ContentAndPR-Member",
+	"image":"",
+	"Roles": "Public Relation"
+	,"links" : {
+		"Github":"",
+		"Instagram" : "",
+		"LinkedIn" : "https://www.linkedin.com/in/gunjan-katre-7259b8250"
+			}
+	}
+
+]

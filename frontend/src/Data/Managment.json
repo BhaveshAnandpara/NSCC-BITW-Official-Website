@@ -1,0 +1,99 @@
+[
+    {
+
+        "name" : "Praful Kude",
+        "designation" : "Management-Member",
+        "image":"",
+        "Roles":"Management"
+        ,"links" : {
+            "Github":" https://github.com/Praful028 ",
+            "Instagram" : " https://instagram.com/_praful_kude_02?utm_medium=copy_link",
+            "LinkedIn" : " https://www.linkedin.com/in/praful-kude-752b5a206"
+                }
+        },
+    {
+    
+        "name" : "Tushar Lohave ",
+        "designation" : "Management-Member",
+        "image":"",
+        "Roles": "Event Manager"
+        ,"links" : {
+            "Github":"",
+            "Instagram" : "https://www.instagram.com/Mr.tushar_lohave_23",
+            "LinkedIn" : "https://www.linkedin.com/in/tushar-lohave-0b61ba246"
+                }
+        },
+    
+        {
+    
+        "name" : "Sauryansh shrivastav ",
+        "designation" : "Management-Member",
+        "image":"",
+        "Roles": "Event Manager"
+        ,"links" : {
+            "Github":"",
+            "Instagram" : "https://www.instagram.com/Sauryansh45",
+            "LinkedIn" : "https://www.linkedin.com/in/sauryansh-shrivastav-770bb0240"
+                }
+        },
+    {
+    
+        "name" : "Yash Kochar",
+        "designation" : "Management-Member",
+        "image":"",
+        "Roles": "Event Manager"
+        ,"links" : {
+            "Github":"https://github.com/yashkochar14",
+            "Instagram" : "https://www.instagram.com/yashkochar14",
+            "LinkedIn" : "https://www.linkedin.com/in/yash-kochar-05a5a1229"
+                }
+        },
+    {
+    
+        "name" : "Rishi Shukla ",
+        "designation" : "Management-Member",
+        "image":"",
+        "Roles": "Event Manager"
+        ,"links" : {
+            "Github":"https://github.com/Rishi819",
+            "Instagram" : "https://www.instagram.com/rshukls officials ",
+            "LinkedIn" : "https://www.linkedin.com/in/rishi-shukla-9886b2240"
+                }
+        },
+    {
+    
+        "name" : "Harshal Bhagat ",
+        "designation" : "Management-Member",
+        "image":"",
+        "Roles":"Event Manager"
+        ,"links" : {
+            "Github":"https://github.com/Hxrshxl",
+            "Instagram" : "http://www.instagram.com/_the_hxrshxl_",
+            "LinkedIn" : "https://www.linkedin.com/in/harshal-bhagat-03169b204"
+                }
+        },
+    {
+    
+        "name" : "Pranjal Panchawate ",
+        "designation" : "Management-Member",
+        "image":"",
+        "Roles":"Event Manager"
+        ,"links" : {
+            "Github":"",
+            "Instagram" : "",
+            "LinkedIn" : ""
+                }
+        },
+    {
+    
+        "name" : "Ayush jha ",
+        "designation" : "Management-Member",
+        "image":"",
+        "Roles": "Photographer"
+        ,"links" : {
+            "Github":"",
+            "Instagram" : "https://www.instagram.com/aayuushhhhhh",
+            "LinkedIn" : ""
+                }
+        }
+]

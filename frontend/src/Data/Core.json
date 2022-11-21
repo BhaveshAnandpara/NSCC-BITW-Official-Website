@@ -1,0 +1,67 @@
+[
+    {
+    
+        "name" : "Bhavesh Anandpara",
+        "designation" : "President",
+        "image":"",
+        "Roles":"President"
+        ,"links" : {
+            "Github":"https://github.com/BhaveshAnandpara",
+            "Instagram" : "https://www.instagram.com/bhavesh_anandpara_______/",
+            "LinkedIn" : "https://www.linkedin.com/in/bhavesh-anandpara-a95461201/"
+                }
+        },
+    
+        {
+    
+        "name" : "Devansh Kaushik",
+        "designation" : "Vice-President",
+        "image":"",
+        "Roles":"Vice-President"
+        ,"links" : {
+            "Github":"https://github.com/Zazen4745",
+            "Instagram" : "http://www.instagram.com/@devanshk404",
+            "LinkedIn" : "https://www.linkedin.com/in/devansh-kaushik-b56b971a2/"
+                }
+        },
+    
+    
+        {
+    
+        "name" : "Vaishnavi Bhende",
+        "designation" : "Social-Media-and-Marketing-Lead",
+        "image":"",
+        "Roles":"Social Media Manager"
+        ,"links" : {
+            "Github":"https://github.com/vaishna2002",
+            "Instagram" : "http://www.instagram.com/v_a_i.s.h.n.a_v_i",
+            "LinkedIn" : "https://www.linkedin.com/in/vaishnavi-bhende-b16942221"
+                }
+        },
+    
+        {
+    
+        "name" : "Yash Wadatkar",
+        "designation" : "Technical-Lead",
+        "image":"",
+        "Roles": "Technical-Member"
+        ,"links" : {
+            "Github":"https://github.com/Yash-Wadatkar",
+            "Instagram" : "https://www.instagram.com/wadatkar_yash?r=nametag",
+            "LinkedIn" : "https://www.linkedin.com/in/yash-wadatkar-49002b229"
+                }
+        },
+    
+        {
+    
+        "name" : "Shrawani Gulkari",
+        "designation" : "Content-and-PR-Head",
+        "image":"",
+        "Roles": "Public Relation"
+        ,"links" : {
+            "Github":"",
+            "Instagram" : "https://www.instagram.com/invites/contact/?i=1mke3lyni3e2q&utm_content=5vyj7qy",
+            "LinkedIn" : "https://www.linkedin.com/in/shrawani-gulkari-276291246"
+                }
+        }
+    ]

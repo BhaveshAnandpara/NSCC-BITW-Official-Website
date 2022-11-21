@@ -80,7 +80,7 @@ app.get('/teams', async (req, res) => {
     let coreTeam = []
     let coreArr = []
     let TechnicalTeam = []
-    let ManagmentTeam = []
+    let ManagementTeam = []
     let SocialMediaTeam = []
     let ContentAndPRTeam = []
 
@@ -103,8 +103,8 @@ app.get('/teams', async (req, res) => {
             else if (doc.data()['member'].designation == "Technical-Member") {
                 TechnicalTeam.push(doc.data()['member'])
             }
-            else if (doc.data()['member'].designation == "Managment-Member") {
-                ManagmentTeam.push(doc.data()['member'])
+            else if (doc.data()['member'].designation == "Management-Member") {
+                ManagementTeam.push(doc.data()['member'])
             }
             else if (doc.data()['member'].designation == "SocialMedia-Member") {
                 SocialMediaTeam.push(doc.data()['member'])
@@ -118,7 +118,7 @@ app.get('/teams', async (req, res) => {
 
         console.log([...coreArr, ...coreTeam]);
 
-        res.json({ coreTeam: [...coreArr, ...coreTeam], TechnicalTeam, ManagmentTeam, SocialMediaTeam, ContentAndPRTeam })
+        res.json({ coreTeam: [...coreArr, ...coreTeam], TechnicalTeam, ManagementTeam, SocialMediaTeam, ContentAndPRTeam })
 
     } catch (e) {
         console.log(e);
