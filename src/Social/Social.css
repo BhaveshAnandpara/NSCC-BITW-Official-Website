@@ -1,0 +1,109 @@
+.social-media-icons-white{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+
+.social-media-icons-white > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.social-section{
+    justify-content: center !important;
+}
+
+.titles{
+    margin-bottom: 60px;
+}
+
+.text-center{
+    margin-top: 20%;
+}
+
+
+.social-media-icons-white a {
+    font-size: 1.8rem;
+}
+
+.social-media-icons-white > a:hover{ 
+      background-color: rgba(150, 202, 245, 0.952);
+        color: rgb(46, 46, 46);
+        box-shadow: 0 0 5px rgba(150, 202, 245, 0.952),
+                    0 0 20px rgba(150, 202, 245, 0.952),
+                    0 0 35px rgba(150, 202, 245, 0.952),
+                    0 0 50px rgba(150, 202, 245, 0.952);
+        border-color:rgba(150, 202, 245, 0.952);
+}
+
+a.Insta{
+  color:  #bc2a8d;
+  
+border-radius: 50%;
+border: 10px solid white;
+padding: 5px;
+background-color: white;
+
+}
+
+
+a.linkdin{
+    color:   #0A66C2;
+  
+border-radius: 50%;
+border: 10px solid white;
+padding: 5px;
+background-color: white;
+}
+
+a.github{
+    color:   #171515;
+  
+    border-radius: 50%;
+    border: 10px solid white;
+    padding: 5px;
+    background-color: white;
+}
+
+a.twitter{
+    color:  #00acee;
+  
+    border-radius: 50%;
+    border: 10px solid white;
+    padding: 5px;
+    background-color: white;
+}
+
+a.discord{
+    color:   #7289d9;
+  
+    border-radius: 50%;
+    border: 10px solid white;
+    padding: 5px;
+    background-color: white;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .social-media-icons-white{
+        width: 100%;
+    }
+    
+    .social-media-icons-white > a > * {
+        height: 1em;
+        width: 1em;        
+    }
+
+    .social-media-icons-white > a{   
+        margin-right: 30px;
+    }
+    
+}
