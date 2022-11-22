@@ -1,6 +1,6 @@
 {
     "builds":[{
-        "src":"./app.js",
+        "src":"./frontend/index.js",
         "use" : "@vercel/node"
     }],
     "routes":[{
