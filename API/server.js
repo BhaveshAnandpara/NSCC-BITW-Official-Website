@@ -4,6 +4,8 @@ var app = express();
 var bodyParser = require('body-parser');
 const multer = require('multer')
 
+const FIREBASE_CONFIG = require('./config')
+
 const storage = multer.diskStorage({ // notice you are calling the multer.diskStorage() method here, not multer()
     destination: function (req, file, cb) {
         cb(null, '../frontend/public/Media/')
@@ -28,20 +30,14 @@ app.use(function (req, res, next) {
     next();
 });
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCfzG7Hl5YeCYkH45M6bLYaFcpjwPh-vuk",
-    authDomain: "nscc-bitw.firebaseapp.com",
-    projectId: "nscc-bitw",
-    storageBucket: "nscc-bitw.appspot.com",
-    messagingSenderId: "357924802216",
-    appId: "1:357924802216:web:a6ab5f26a7727a968d7c9d",
-    measurementId: "G-K6089VEEY0"
-};
+const firebaseConfig = FIREBASE_CONFIG;
 
 const server = initializeApp(firebaseConfig);
 const db = getFirestore(server);
 
 const PORT = 5050
+
+
 
 app.post('/teams', upload.array('images'), async (req, res) => {
     try {
@@ -189,8 +185,8 @@ app.get('/getEvents', async (req, res) => {
             let eventDate = doc.data().date
 
             let date = today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear()
-            date = date.replaceAll('-' , '');
-            eventDate = eventDate.replaceAll('-' , '');
+            date = date.replaceAll('-', '');
+            eventDate = eventDate.replaceAll('-', '');
 
             date > eventDate ? recentEvents.push(doc.data()) : upcomingEvents.push(doc.data())
 
@@ -204,6 +200,13 @@ app.get('/getEvents', async (req, res) => {
         res.json(e)
 
     }
+
+})
+
+app.get("/", (req, res) => {
+
+    app.use(express.static(path.resolve(__dirname, 'frontend', 'build')))
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
 
 })
 
