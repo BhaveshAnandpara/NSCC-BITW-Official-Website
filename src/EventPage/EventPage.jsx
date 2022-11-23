@@ -22,7 +22,7 @@ function EventPage() {
 
     var config = {
       method: 'get',
-      url: 'http://localhost:5050/getEvents',
+      url: 'https://nscc-bitw-website-backend.vercel.app/home/getEvents',
     };
 
     axios(config)

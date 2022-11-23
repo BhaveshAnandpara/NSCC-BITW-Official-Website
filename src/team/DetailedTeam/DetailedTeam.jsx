@@ -146,14 +146,13 @@ export default function DetailedTeam() {
 
         var config = {
             method: 'get',
-            url: 'http://localhost:5050/teams',
+            url: 'https://nscc-bitw-website-backend.vercel.app/home/teams',
         };
 
         axios(config)
             .then(function (response) {
 
                 // console.log(JSON.stringify(response.data));
-
                 const cards = renderCards(response.data)
                 console.log(cards);
 
