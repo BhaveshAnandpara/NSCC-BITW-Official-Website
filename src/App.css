@@ -14,18 +14,26 @@ body {
   background: #000;
   height: 100vh;
   width: 100vw;
-  background-image: url(../src/assets/Images/bg.jpg);
+  /* background-image: url(../src/assets/Images/BG.mp4); */
   background-size: cover;
   overflow-x: hidden;
   background-attachment: fixed;
 }
 
-.bg{
+
+.bgVideo , .blackOverlay{
   overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
+  width: 100%;
+  height: auto;
+  position: fixed;
   z-index: -10;
+  filter: blur(2px);
+}
+
+.blackOverlay{
+  width: 110vw;
+  height: 110vh;
+  background: linear-gradient(116.7deg, rgba(0, 0, 0, 0.39) -4.37%, rgba(0, 0, 0, 0.6) 100%);
 }
 
 .bg-spin {
@@ -78,6 +86,13 @@ section {
 
 
 @media only screen and (max-width: 600px) {
+
+
+  .bgVideo {
+    width: auto;
+    height: 100%;
+  }
+  
   section {
     height : 85vh;
   }
