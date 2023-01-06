@@ -35,8 +35,7 @@ function EventPage() {
           arr = arr.concat(response.data['upcomingEvents'])
           console.log(arr);
 
-          arr = arr.concat((response.data['recentEvents'])[1 - response.data['upcomingEvents'].length])
-          console.log(arr);
+          arr = arr.concat((response.data['recentEvents']).splice(0 , 2 - (response.data['upcomingEvents'].length  <= 2 ? response.data['upcomingEvents'].length : 2  ) ))
           setEvents(arr)
 
         }
@@ -146,11 +145,7 @@ function EventPage() {
           </center>
         </h1>
 
-        <div className="eventCard-container" id="eventCardContainer" >
-
-
-
-        </div>
+        <div className="eventCard-container" id="eventCardContainer" > </div>
 
       </section>
     </>

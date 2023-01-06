@@ -8,10 +8,14 @@ import HeroSection from '../HeroSection/HeroSection';
 import '../App.css'
 
 
-export default function Home(){
+
+export default function Home() {
+
+
 
   return (
     <>
+
       <div className="page">
         <HeroSection />
       </div>
@@ -27,7 +31,7 @@ export default function Home(){
       <div className="page">
         <Social />
       </div>
-        <Navbar />
+      <Navbar />
     </>
   );
 }

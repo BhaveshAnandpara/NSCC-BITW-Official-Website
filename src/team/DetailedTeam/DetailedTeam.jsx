@@ -2,9 +2,8 @@ import React from 'react'
 import './DetailedTeam.css'
 import hands from '../../assets/Icons/hands.svg'
 import axios from 'axios'
-import {useEffect } from 'react'
+import { useEffect } from 'react'
 import * as ReactDOM from 'react-dom/client';
-
 
 import github from '../../assets/Icons/github-white.svg'
 import instagram from '../../assets/Icons/insta-white.svg'
@@ -17,7 +16,7 @@ const card = (data) => {
     return (
         <>
             <div className="team-card-container ">
-                <div className="profileImg overlay">
+                <div className="profileImg">
                     <img loading='lazy' src={`/Media/${arr[arr.length - 1]}`} alt="profile" />
                 </div>
                 <div className="member-info ">
@@ -46,7 +45,7 @@ function renderCards(data) {
     console.log(data);
 
     for (const key in data) {
-        
+
         if (key === "coreTeam") {
 
             data[key].forEach(element => {

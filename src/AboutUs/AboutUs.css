@@ -5,13 +5,13 @@
 }
 
 .about-cards {
-    width: 90%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px 60px;
-
+    padding: 30px 60px;
+    border-radius: 8px;
 }
 
 .about-content {
