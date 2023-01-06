@@ -7,6 +7,7 @@ import Home from './Home/Home';
 import DetailedTeam from './team/DetailedTeam/DetailedTeam';
 import FormRsvp from './Rsvp/Form';
 import { useEffect } from 'react';
+import bg from './assets/Images/BG.mp4'
 
 function App() {
 
