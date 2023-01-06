@@ -9,7 +9,7 @@ import './Form.css'
 function FormRsvp() {
   return (
     <>
-      <section >
+      <section className='rsvpSec' >
 
         <div className="RSVPcontainer glass">
 
@@ -76,7 +76,7 @@ function FormRsvp() {
 
             </Form.Group>
 
-            <Button variant="outline-light " style={{ 'border' : 'none' }}  className=' mb-0 mt-4 glass' data-toggle="tooltip" data-placement="bottom"  size="sm" >Submit</Button>
+            <Button variant="outline-light " style={{ 'border': 'none' }} className=' mb-0 mt-4 glass' data-toggle="tooltip" data-placement="bottom" size="sm" >Submit</Button>
           </Form>
 
 

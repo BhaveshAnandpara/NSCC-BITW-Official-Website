@@ -1,8 +1,11 @@
-@media screen and (max-width: 650px) {}
+
+.rsvpSec{
+  height: auto;
+}
 
 .RSVPcontainer {
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   padding-top: 10px;
   width: 90%;
   padding: 40px;
