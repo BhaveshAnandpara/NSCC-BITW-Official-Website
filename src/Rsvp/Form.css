@@ -1,0 +1,31 @@
+@media screen and (max-width: 650px) {
+    
+  
+  }
+
+  .container{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    border: 1px solid rgb(245, 242, 242);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .outer{
+    display: flex;
+    justify-content: center;
+  }
+ .center{
+margin-left: 30%;
+ }
+
+.formInput{
+    background: none;
+  }
+
+  .textcolor
+  {
+    color: azure;
+  }
+  option{
+    color: black;
+  }
