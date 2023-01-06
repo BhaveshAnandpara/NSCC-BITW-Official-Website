@@ -18,7 +18,7 @@
     max-width: 500px;
     background: linear-gradient(186.43deg, rgba(255, 255, 255, 0.08) 1.03%, rgba(255, 255, 255, 0.1) 99.57%);
     box-shadow: 14px 0px 48px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(25.5px);
 
     border-radius: 6px;
     padding: 23px 10px 23px 24px;
@@ -76,12 +76,13 @@
     width: 120px ;
     overflow: hidden;
     border-radius: 50%;
+    background-color: rgb(138, 138, 138 ,0.5);
 }
 
 .profileImg > img {
     width: 120px ;
     margin: auto;
-
+    opacity: 0.7;
 }
 
 .icon{

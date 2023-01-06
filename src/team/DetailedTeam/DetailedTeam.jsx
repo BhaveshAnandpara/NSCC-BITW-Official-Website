@@ -16,7 +16,7 @@ const card = (data) => {
     return (
         <>
             <div className="team-card-container ">
-                <div className="profileImg overlay">
+                <div className="profileImg">
                     <img loading='lazy' src={`/Media/${arr[arr.length - 1]}`} alt="profile" />
                 </div>
                 <div className="member-info ">
