@@ -64,3 +64,21 @@ option {
 .closedFormDiv > p > b {
   color: #000000;
 }
+
+@media only screen and (max-width: 600px) {
+
+  .RSVPcontainer{
+    width: 100%;
+  }
+
+  .RSVPcontainer > h2 {
+    font-size: 20px;
+  }
+
+  .formDesc{
+    font-size: 16px;
+  }
+
+
+
+}
