@@ -4,7 +4,7 @@
 }
 
 .RSVPcontainer {
-  margin-top: 5px;
+  margin-top: 40px;
   margin-bottom: 40px;
   padding-top: 10px;
   width: 90%;
@@ -16,6 +16,7 @@
   color: white;
   opacity: 0.7;
   margin: 24px 0px;
+  white-space: pre-wrap;
 }
 
 .outer {
@@ -47,4 +48,19 @@
 
 option {
   color: black;
+}
+
+.closedFormDiv{
+  margin: 24px 40px;
+  width: 90%;
+  text-align: center;
+  padding: 24px 0px;
+  font-size: 34px;
+  font-weight: 600;
+  color: white;
+  opacity: 0.7;
+}
+
+.closedFormDiv > p > b {
+  color: #000000;
 }

@@ -4,80 +4,165 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
+import { useEffect, useRef, useState } from 'react';
 import './Form.css'
+import axios from 'axios';
+import { createRoot } from 'react-dom/client';
+import { create } from '@mui/material/styles/createTransitions';
 
 function FormRsvp() {
+
+  const [formData, setformData] = useState()
+  const rsvpCon = useRef()
+  const selectCon = useRef()
+
+  useEffect(() => {
+
+    const title = (window.location.href).split('/').reverse()[0]
+
+    var config = {
+      method: 'get',
+      url: `https://nscc-bitw-website-backend.vercel.app/home/forms?title=${title}`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: {}
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(response.data.date)
+
+        const today = new Date()
+        const lastDate = new Date(response.data.date)
+        
+        if( today > lastDate ){
+          window.location.href = `/rsvp/${title}/formClosed`
+        }
+
+
+        setformData(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+
+  }, [])
+
+  useEffect(() => {
+
+    // console.log(formData);
+
+    const root = createRoot(rsvpCon.current)
+
+    try {
+
+      const formFields = []
+
+      formFields.push(
+        <Form className='formInput'>
+
+          {
+            addFormFields(formData.fields)
+          }
+
+          <Button variant="outline-light " style={{ 'border': 'none' }} className=' mb-0 mt-4 glass' data-toggle="tooltip" data-placement="bottom" size="sm" >Submit</Button>
+        </Form>
+      )
+
+      root.render(
+        <>
+          <h2> {formData.title} </h2>
+          <p className="formDesc">{formData.desc}</p>
+
+          {formFields}
+
+        </>
+      )
+
+    } catch (e) { }
+
+
+  }, [formData])
+
+
+  function addFormFields(data) {
+
+    const fieldStructure = []
+
+
+    data.forEach(element => {
+
+      const field = element['field']
+
+      if (field.type) {
+
+        fieldStructure.push(
+          <>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+
+              <Form.Label className="textcolor" >{field.name}</Form.Label>
+              <Form.Control type={field.type} placeholder={field.placeholder} className='formInput textcolor glass' />
+
+            </Form.Group>
+          </>
+        )
+
+      }
+      else if (field.options) {
+
+
+        fieldStructure.push(
+          <>
+
+            <Form.Label className="textcolor" >{field.name}</Form.Label>
+            <Form.Select ref={selectCon} aria-label="Default select example" style={{ 'opacity': '0.3' }} defaultValue={0} className="mb-3 formInput textcolor glass" onChange={(e) => { e.target.style.opacity = '1' }} >
+              {pushOptions(field.options)}
+            </Form.Select>
+          </>
+        )
+
+
+      }
+
+
+
+
+    });
+
+    return fieldStructure;
+
+  }
+
+  function pushOptions(data) {
+
+    const arr = []
+
+    try {
+
+      data.forEach((opt, index) => {
+        arr.push(
+          <>
+            <option value={index}> {opt} </option>
+          </>
+        )
+      })
+
+      return arr
+
+    } catch (e) { }
+
+  }
+
+
   return (
     <>
       <section className='rsvpSec' >
 
-        <div className="RSVPcontainer glass">
-
-          <h2>NSCC BITW CodeRush-X</h2>
-          <p className="formDesc">The TIME has finally arrived for the 3rd Edition of Code Rush X (Formerly known as Grand Coding Contest) 📣
-            <br />
-            | 𝐏𝐫𝐢𝐳𝐞 𝐌𝐨𝐧𝐞𝐲 & 𝐆𝐢𝐟𝐭 𝐕𝐨𝐮𝐜𝐡𝐞𝐫𝐬 𝐰𝐨𝐫𝐭𝐡- ₹ 10,00,000/- <b> &#128176; </b>
-            <br />
-            *Get placement and internship opportunities in Top Tech Companies*
-            <br />
-            Exclusive 𝗙𝗿𝗲𝗲 𝗕𝗲𝗴𝗶𝗻𝗻𝗲𝗿 𝗳𝗿𝗶𝗲𝗻𝗱𝗹𝘆 Coding Course & Internship Opportunities. 😎<br />
-            Language Used: c/c++/Java/Javascript/Python. <br />
-            <br />
-            𝗗𝗮𝘁𝗲 𝗼𝗳 𝗖𝗼𝗻𝘁𝗲𝘀𝘁: 28𝘁𝗵 Jan 𝟮𝟬𝟮3 𝗮𝘁 𝟮𝟭:𝟬𝟬 - 00:00 📆<br />
-            Eligibility- Open to Coder and Non-Coders <br />
-            <br />
-            𝗣.𝗦. This event happens only twice a year and you are part of the best Global Coding Contest. ⏰ <br />
-            <br />
-            Person with most referrals will have a chance to win exciting goodies 📢</p>
-
-          <Form className='formInput'>
-
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-
-              <Form.Label className="textcolor" >Email</Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" className='formInput textcolor glass' />
-
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-
-              <Form.Label className="textcolor" >Name</Form.Label>
-              <Form.Control className='formInput textcolor glass' type="text" placeholder="Bhavesh Anandpara" />
-
-            </Form.Group>
-
-            <Form.Label className="textcolor" >Year</Form.Label>
-            <Form.Select aria-label="Default select example" style={{ 'opacity': '0.3' }} defaultValue={0} className="mb-3 formInput textcolor glass" onChange={(e) => { e.target.style.opacity = '1' }} >
-
-              <option value='0' >Select Current Study Year</option>
-              <option value="1">First Year</option>
-              <option value="2">Second Year</option>
-              <option value="3">Third Year</option>
-              <option value="4">Fourth Year</option>
-
-            </Form.Select>
-
-            <Form.Label className="textcolor" >Branch</Form.Label>
-            <Form.Select aria-label="Default select example" style={{ 'opacity': '0.3' }} defaultValue={0} className="mb-3 formInput textcolor glass" onChange={(e) => { e.target.style.opacity = '1' }}>
-
-              <option value='0'>  Select Branch</option>
-              <option value="1">  Computer Engineering</option>
-              <option value="2">  Electrical Engineering</option>
-              <option value="3">  Mechanical Engineering</option>
-              <option value="4">  Civil Engineering</option>
-
-            </Form.Select>
+        <div className="RSVPcontainer glass" ref={rsvpCon} >
 
 
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-
-              <Form.Label className="textcolor" >Phone No. ( WhatsApp )</Form.Label>
-              <Form.Control className='formInput glass' type="text" maxLength={10} placeholder="Your Answer" />
-
-            </Form.Group>
-
-            <Button variant="outline-light " style={{ 'border': 'none' }} className=' mb-0 mt-4 glass' data-toggle="tooltip" data-placement="bottom" size="sm" >Submit</Button>
-          </Form>
 
 
         </div>

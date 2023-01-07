@@ -8,6 +8,7 @@ import DetailedTeam from './team/DetailedTeam/DetailedTeam';
 import FormRsvp from './Rsvp/Form';
 import { useEffect } from 'react';
 import bg from './assets/Images/BG.mp4'
+import ClosedForm from './Rsvp/ClosedForm';
 
 function App() {
 
@@ -29,7 +30,8 @@ function App() {
           <Route path='/team' element={<DetailedTeam />} />
           <Route path='/event' element={<Events />} />
           <Route path='/events' element={<DetailedEventPage />} />
-          <Route path='/rsvp' element={<FormRsvp />} />
+          <Route path='/rsvp/:title' element={<FormRsvp />} />
+          <Route path='/rsvp/:title/formClosed' element={<ClosedForm />} />
 
         </Routes>
       </BrowserRouter>
