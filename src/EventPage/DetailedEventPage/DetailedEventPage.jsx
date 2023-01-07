@@ -53,9 +53,17 @@ function EventPage() {
             const upcomingEventsCards = Cards(upcomingEvents)
             const recentEventsCards = Cards(recentEvents)
 
-            upcomingRoot.render(<>
-                {upcomingEventsCards}
-            </>)
+            if (upcomingEventsCards.length < 1) {
+                upcomingRoot.render(<>
+                    <p className="overlay" style={ { 'fontSize' : '24px' , 'fontWeight' : '700' , 'textAlign' : 'center' } } > No Upcoming Events For Now</p>
+                </>)
+            }
+            else {
+
+                upcomingRoot.render(<>
+                    {upcomingEventsCards}
+                </>)
+            }
 
             recentRoot.render(<>
                 {recentEventsCards}
