@@ -102,10 +102,10 @@ section {
 
   .bgVideo {
     width: auto;
-    height: 100%;
+    height: 130%;
   }
   
   section {
-    height : 85vh;
+    height : 100vh;
   }
 }
