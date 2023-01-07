@@ -30,6 +30,8 @@ function EventPage() {
         axios(config)
             .then(function (response) {
 
+                console.log(response.data);
+
                 setUpcomingEvents(response.data['upcomingEvents'])
                 setRecentEvents(response.data['recentEvents'])
 
@@ -50,12 +52,12 @@ function EventPage() {
 
         try {
 
-            const upcomingEventsCards = Cards(upcomingEvents)
-            const recentEventsCards = Cards(recentEvents)
+            const upcomingEventsCards = Cards(upcomingEvents , 'upcomingEvents')
+            const recentEventsCards = Cards(recentEvents , 'recentEvents')
 
             if (upcomingEventsCards.length < 1) {
                 upcomingRoot.render(<>
-                    <p className="overlay" style={ { 'fontSize' : '24px' , 'fontWeight' : '700' , 'textAlign' : 'center' } } > No Upcoming Events For Now</p>
+                    <p className="overlay" style={{ 'fontSize': '24px', 'fontWeight': '700', 'textAlign': 'center' }} > No Upcoming Events For Now</p>
                 </>)
             }
             else {
@@ -76,7 +78,7 @@ function EventPage() {
     }, [upcomingEvents, recentEvents])
 
 
-    function Cards(events) {
+    function Cards(events ,type) {
 
         const eventCards = []
 
@@ -92,7 +94,7 @@ function EventPage() {
                         <p className="multiline summary" >
                             {data.desc}
                         </p>
-                        <a className="overlay viewMore" onClick={() => { window.location.href = `/event?${data.name}` }} >View More...</a>
+                        <a className="overlay viewMore"  > { type === 'upcomingEvents' ? <button className="rsvpBtn" onClick={() => { window.location.href = `/rsvp/${data.name}` }} > Register </button> : <span onClick={() => { window.location.href = `/event?${data.name}` }} > View More... </span>  }</a>
                     </div>
                 );
 

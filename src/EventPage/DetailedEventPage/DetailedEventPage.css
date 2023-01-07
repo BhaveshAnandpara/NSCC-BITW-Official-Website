@@ -23,6 +23,14 @@
     margin-top: 40px;
   }
 
+  .rsvpBtn{
+    border-radius: 4px;
+    margin-bottom: 8px;
+    padding: 4px 12px;
+    background: rgb(238, 238, 238 ,0.2);
+    font-weight: 700;
+  }
+
   @media only screen and (max-width: 600px) {
 
   .rootContainer{
