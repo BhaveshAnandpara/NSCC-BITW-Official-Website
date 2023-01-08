@@ -107,6 +107,7 @@ button {
   height: 110%;
   width: 30%;
   margin-right: 56px;
+  margin-top: 24px;
 }
 
 .eventCard-container > div:nth-child(3){

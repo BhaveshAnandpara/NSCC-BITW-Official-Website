@@ -41,8 +41,7 @@ function EventPage() {
         }
         else {
 
-          arr = arr.concat((response.data['upcomingEvents'])[0], (response.data['upcomingEvents'])[1])
-          console.log(arr);
+          arr = arr.concat( (response.data['upcomingEvents'])[0], (response.data['upcomingEvents'])[1])
           setEvents(arr)
         }
 
@@ -65,6 +64,7 @@ function EventPage() {
       const eventCards = Cards(events)
 
       root.render(<>
+
         {eventCards}
 
         <div className=" box1 glass">
@@ -99,7 +99,9 @@ function EventPage() {
             <p className="multiline summary" >
               {data.desc}
             </p>
-            <a className="overlay viewMore" onClick={() => { window.location.href = `/event?${data.name}` }} >View More...</a>
+            <a className="overlay viewMore"  >{  
+
+              new Date( data.date ) >  new Date( ) ? <button className="rsvpBtn" onClick={() => { window.location.href = `/rsvp/${data.name}` }} >Regsiter</button> : <span onClick={() => { window.location.href = `/event?${data.name}` }} >View More ...</span> }</a>
           </div>
         );
 
