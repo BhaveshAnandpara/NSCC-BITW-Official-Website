@@ -109,4 +109,9 @@ section {
   section {
     height : 100vh;
   }
+
+  .closedFormDiv > p {
+    font-size: 18px;
+  }
+
 }

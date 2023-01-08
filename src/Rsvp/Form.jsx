@@ -21,6 +21,7 @@ function FormRsvp() {
   useEffect(() => {
 
     const title = (window.location.href).split('/').reverse()[0]
+    window.location.href = `/rsvp/${title}/formClosed`
 
     var config = {
       method: 'get',
@@ -179,7 +180,7 @@ function FormRsvp() {
 
       var config = {
         method: 'post',
-        url: 'https://nscc-bitw-website-backend.vercel.app/home/addDataIntoExcel',
+        url: 'http://localhost:9001/home/addDataIntoExcel',
         headers: {
           'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*"
         },
