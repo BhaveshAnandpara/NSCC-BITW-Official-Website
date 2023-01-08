@@ -183,7 +183,7 @@ function FormRsvp() {
 
     var config = {
       method: 'post',
-      url: 'http://localhost:9001/home/addDataIntoExcel',
+      url: 'https://nscc-bitw-website-backend.vercel.app/home/addDataIntoExcel',
       headers: {
         'Content-Type': 'application/json'
       },
