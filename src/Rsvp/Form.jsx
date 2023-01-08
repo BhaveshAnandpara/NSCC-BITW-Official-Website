@@ -185,7 +185,7 @@ function FormRsvp() {
       method: 'post',
       url: 'https://nscc-bitw-website-backend.vercel.app/home/addDataIntoExcel',
       headers: {
-        'Content-Type': 'application/json' , "Access-Control-Allow-Origin": "*"
+        'Content-Type': 'application/json'
       },
       data: userData
     };
@@ -198,7 +198,7 @@ function FormRsvp() {
         }
       })
       .catch(function (error) {
-        console.log(error);
+        console.error(error.response.data);
       });
     }
 
