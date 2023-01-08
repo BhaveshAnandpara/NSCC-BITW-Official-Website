@@ -9,10 +9,12 @@ import './Form.css'
 import axios from 'axios';
 import { createRoot } from 'react-dom/client';
 import { create } from '@mui/material/styles/createTransitions';
+import { CloseFullscreen, WindowOutlined } from '@mui/icons-material';
 
 function FormRsvp() {
 
   const [formData, setformData] = useState()
+  const [userData, setUserData] = useState({status : false})
   const rsvpCon = useRef()
   const selectCon = useRef()
 
@@ -35,8 +37,8 @@ function FormRsvp() {
 
         const today = new Date()
         const lastDate = new Date(response.data.date)
-        
-        if( today > lastDate ){
+
+        if (today > lastDate) {
           window.location.href = `/rsvp/${title}/formClosed`
         }
 
@@ -67,7 +69,7 @@ function FormRsvp() {
             addFormFields(formData.fields)
           }
 
-          <Button variant="outline-light " style={{ 'border': 'none' }} className=' mb-0 mt-4 glass' data-toggle="tooltip" data-placement="bottom" size="sm" >Submit</Button>
+          <Button variant="outline-light " style={{ 'border': 'none' }} className=' mb-0 mt-4 glass' data-toggle="tooltip" data-placement="bottom" size="sm" onClick={() => { handleSubmit() }} >Submit</Button>
         </Form>
       )
 
@@ -103,7 +105,7 @@ function FormRsvp() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
 
               <Form.Label className="textcolor" >{field.name}</Form.Label>
-              <Form.Control type={field.type} placeholder={field.placeholder} className='formInput textcolor glass' />
+              <Form.Control id={field.id} defaultValue={""} type={field.type} placeholder={field.placeholder} className='formInput textcolor glass' />
 
             </Form.Group>
           </>
@@ -117,7 +119,7 @@ function FormRsvp() {
           <>
 
             <Form.Label className="textcolor" >{field.name}</Form.Label>
-            <Form.Select ref={selectCon} aria-label="Default select example" style={{ 'opacity': '0.3' }} defaultValue={0} className="mb-3 formInput textcolor glass" onChange={(e) => { e.target.style.opacity = '1' }} >
+            <Form.Select id={field.id} ref={selectCon} aria-label="Default select example" style={{ 'opacity': '0.3' }} defaultValue={0} className="mb-3 formInput textcolor glass" onChange={(e) => { e.target.style.opacity = '1' }} >
               {pushOptions(field.options)}
             </Form.Select>
           </>
@@ -154,6 +156,54 @@ function FormRsvp() {
     } catch (e) { }
 
   }
+
+  function handleSubmit() {
+
+    let data = {}
+    formData.fields.forEach((field) => {
+      if (field['field'].type)
+        data[field['field'].id] = document.getElementById(field['field'].id).value
+      else {
+        data[field['field'].id] = (field['field'].options)[document.getElementById(field['field'].id).value]
+      }
+    })
+
+    setUserData({ status : true , title: formData.title, data: data })
+
+
+
+  }
+
+  useEffect(() => {
+
+    console.log(userData);
+
+    if( userData.status ){
+
+
+    var config = {
+      method: 'post',
+      url: 'http://localhost:9001/home/addDataIntoExcel',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: userData
+    };
+
+    axios(config)
+      .then(function (response) {
+        if (response.data.status === 200) {
+          alert('Response Saved')
+          window.location.href = '/'
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
+
+
+  }, [userData])
 
 
   return (
