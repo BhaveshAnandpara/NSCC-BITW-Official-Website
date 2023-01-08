@@ -185,7 +185,7 @@ function FormRsvp() {
       method: 'post',
       url: 'https://nscc-bitw-website-backend.vercel.app/home/addDataIntoExcel',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json' , "Access-Control-Allow-Origin": "*"
       },
       data: userData
     };
