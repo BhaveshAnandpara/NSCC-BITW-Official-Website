@@ -30,8 +30,6 @@ function EventPage() {
         axios(config)
             .then(function (response) {
 
-                console.log(response.data);
-
                 setUpcomingEvents(response.data['upcomingEvents'])
                 setRecentEvents(response.data['recentEvents'])
 

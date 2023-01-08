@@ -10,9 +10,7 @@ import instagram from '../../assets/Icons/insta-white.svg'
 import Linkedin from '../../assets/Icons/linkedin-white.svg'
 
 const card = (data) => {
-    console.log(data);
     const arr = (data.image).split('\\')
-    console.log(arr[arr.length - 1]);
     return (
         <>
             <div className="team-card-container ">
@@ -42,7 +40,6 @@ function renderCards(data) {
     let SocialMediaTeam = []
     let ContentAndPRTeam = []
 
-    console.log(data);
 
     for (const key in data) {
 
@@ -151,9 +148,7 @@ export default function DetailedTeam() {
         axios(config)
             .then(function (response) {
 
-                // console.log(JSON.stringify(response.data));
                 const cards = renderCards(response.data)
-                console.log(cards);
 
                 // const root = React.ReactDOM.createRoot(document.getElementById('card-container'))
                 const root = ReactDOM.createRoot(document.getElementById('card-container'))

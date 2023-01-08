@@ -33,7 +33,6 @@ function EventPage() {
         if (response.data['upcomingEvents'].length < 2) {
 
           arr = arr.concat(response.data['upcomingEvents'])
-          console.log(arr);
 
           arr = arr.concat((response.data['recentEvents']).splice(0 , 2 - (response.data['upcomingEvents'].length  <= 2 ? response.data['upcomingEvents'].length : 2  ) ))
           setEvents(arr)

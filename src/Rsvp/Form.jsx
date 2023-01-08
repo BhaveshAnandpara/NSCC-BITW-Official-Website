@@ -14,7 +14,7 @@ import { CloseFullscreen, WindowOutlined } from '@mui/icons-material';
 function FormRsvp() {
 
   const [formData, setformData] = useState()
-  const [userData, setUserData] = useState({status : false})
+  const [userData, setUserData] = useState({ status: false })
   const rsvpCon = useRef()
   const selectCon = useRef()
 
@@ -33,7 +33,6 @@ function FormRsvp() {
 
     axios(config)
       .then(function (response) {
-        console.log(response.data.date)
 
         const today = new Date()
         const lastDate = new Date(response.data.date)
@@ -54,7 +53,6 @@ function FormRsvp() {
 
   useEffect(() => {
 
-    // console.log(formData);
 
     const root = createRoot(rsvpCon.current)
 
@@ -168,7 +166,7 @@ function FormRsvp() {
       }
     })
 
-    setUserData({ status : true , title: formData.title, data: data })
+    setUserData({ status: true, title: formData.title, data: data })
 
 
 
@@ -176,30 +174,29 @@ function FormRsvp() {
 
   useEffect(() => {
 
-    console.log(userData);
 
-    if( userData.status ){
+    if (userData.status) {
 
+      var config = {
+        method: 'post',
+        url: 'https://nscc-bitw-website-backend.vercel.app/home/addDataIntoExcel',
+        headers: {
+          'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*"
+        },
+        data: userData
+      };
 
-    var config = {
-      method: 'post',
-      url: 'https://nscc-bitw-website-backend.vercel.app/home/addDataIntoExcel',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: userData
-    };
-
-    axios(config)
-      .then(function (response) {
-        if (response.data.status === 200) {
-          alert('Response Saved')
-          window.location.href = '/'
-        }
-      })
-      .catch(function (error) {
-        console.error(error.response.data);
-      });
+      axios(config)
+        .then(function (response) {
+          console.log(response.data);
+          if (response.data.status === 200) {
+            alert('Response Saved')
+            window.location.href = '/'
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
 
 

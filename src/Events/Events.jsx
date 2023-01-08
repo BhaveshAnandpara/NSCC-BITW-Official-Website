@@ -78,13 +78,6 @@ export default function Events() {
     // HTML Code for Page
 
     const page = (data) => {
- 
-        try{
-            console.log(data);
-        }
-        catch(e){
-
-        }
 
         try {
 
