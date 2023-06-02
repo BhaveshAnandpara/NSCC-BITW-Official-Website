@@ -7,23 +7,21 @@ import Home from './Home/Home';
 import DetailedTeam from './team/DetailedTeam/DetailedTeam';
 import FormRsvp from './Rsvp/Form';
 import { useEffect } from 'react';
-import bg from './assets/Images/BG.mp4'
+import bg from './assets/Images/bg.jpg'
 import ClosedForm from './Rsvp/ClosedForm';
 
 function App() {
 
-  useEffect(() => {
+//   useEffect(() => {
 
-    const root = document.getElementById('bgVideo')
-    root.playbackRate = 0.4
-  }, [])
+//     const root = document.getElementById('bgVideo')
+//     root.playbackRate = 0.4
+//   }, [])
 
   return (
     <>
       <BrowserRouter>
-        <video id='bgVideo' className='bgVideo' autoPlay muted loop playsInline  >
-          <source src={bg} type='video/mp4' />
-        </video>
+        <img src={bg} className='bgVideo' />
         <div className="blackOverlay"></div>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -37,6 +35,6 @@ function App() {
       </BrowserRouter>
     </>
   );
-}
+  }
 
 export default App;
